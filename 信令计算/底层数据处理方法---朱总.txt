@@ -1,0 +1,25 @@
+clean04-/home/daladmin> dbcon
+clean04-/opt/uniload/DAL/dalconfig/db2db/config> grep -i OI_WY_EUCELL_HIGH_INTERFERE_H *xml
+clean04-/opt/uniload/DAL/dalconfig/db2db/config> cd ..
+clean04-/opt/uniload/DAL/dalconfig/db2db> PM
+clean04-/opt/uniload/BLL/PM> cd config/
+clean04-/opt/uniload/BLL/PM/config> cd COMMON/
+clean04-/opt/uniload/BLL/PM/config/COMMON> grep -i OI_WY_EUCELL_HIGH_INTERFERE_H *xml
+measurement_3028.xml:   <stage id="3" table="OI_WY_EUCELL_HIGH_INTERFERE_H">
+measurement_3028.xml:                           <mapping type="4" algorithm="(select max(city_zhname) from dw_dm_co_city where city_key=OI_WY_EUCELL_HIGH_INTERFERE_H.CITY_KEY)"></mapping>
+measurement_3028.xml:                           <mapping type="4" algorithm="(select max(country_zhname) from DW_DM_CO_COUNTRY where country_key=OI_WY_EUCELL_HIGH_INTERFERE_H.COUNTRY_KEY)"></mapping>
+measurement_30281.xml:  <stage id="3" table="OI_WY_EUCELL_HIGH_INTERFERE_H">
+measurement_30281.xml:                          <mapping type="4" algorithm="(select max(city_zhname) from dw_dm_co_city where city_key=OI_WY_EUCELL_HIGH_INTERFERE_H.CITY_KEY)"></mapping>
+measurement_30281.xml:                          <mapping type="4" algorithm="(select max(country_zhname) from DW_DM_CO_COUNTRY where country_key=OI_WY_EUCELL_HIGH_INTERFERE_H.COUNTRY_KEY)"></mapping>
+clean04-/opt/uniload/BLL/PM/config/COMMON> ra
+clean04-/opt/uniload/bin> grep 3028 *.xml
+interface_job.xml:              <cmd>multistage_sybase.pl -measure 3028 -start [start_time] -stop [stop_time] -dbid dwdb2 -USR1 -USR2 -insert</cmd>
+clean04-/opt/uniload/bin> cd /opt/uniload/BLL/PM/config/COMMON
+clean04-/opt/uniload/BLL/PM/config/COMMON> vi OI_WY_EUCELL_HIGH_INTERFERE_H *xml
+
+10.40.100.54
+配置文件位置：
+/opt/uniload/BLL/PM/config/COMMON/*.xml
+
+脚本执行配置文件位置
+/opt/uniload/bin/*.xml

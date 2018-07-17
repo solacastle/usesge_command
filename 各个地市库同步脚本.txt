@@ -1,0 +1,47 @@
+华为一体机同步到新DDN库：
+10.40.96.144
+/dataload/output/export_data_183.sh "tmpcount_ftp_test" " and 1=1"
+
+华为沙箱库同步到老DDN库：
+10.40.96.135：
+sh /dataload/output/export_data_109_26.sh "tongbu_test" " and 1=1"
+
+华为沙箱库同步到DDN库：
+10.40.96.144：
+sh /dataload/output/export_data_109_26.sh "tongbu_test" " and 1=1"
+
+新DDN库144到老DDN库135同步脚本：
+10.40.96.135:
+sh /dataload/output/export_data_ddn.sh "tmpcount_waihu_user_201805" " and 1=1"
+
+DDN库135同步到DDN库144脚本:
+10.40.96.135：
+sh /dataload/output/export_data_dnn_to_newddn.sh "FACT_VOICE_CDR_2G3G_V" " and MONTH_KEY=201703"
+
+DDN库135同步到DDN库144脚本:(swxt用户)
+10.40.96.135：
+sh /dataload/output/export_data_dnn_to_newddn_swxt.sh "DW_LIST_CSR_XDR_DETAIL_W_05" " and WEEK_KEY=20180528"
+
+从架构改造库同步到新DDN库脚本：
+ssh dataload@172.16.64.40
+Inspur!!
+sh /dataload/export_data.sh "B1H_ALL_HOST_SP_L3_28" " and day_key=20180628 and hour_key=14"
+
+从架构改造库同步数据到老DDN：
+ssh dataload@172.16.64.58/59
+Inspur!!
+sh /dataload/export_data_old_ddn.sh "tmpcount_ftp_test" " and 1=1"
+
+从新DDN库同步到新架构改造库脚本:
+ssh dataload@172.16.64.40
+Inspur!!
+/dataload/output/export_data_144.sh "DW_DM_GROUP_APP_TYPE_ZC_20180516" " and 1=1"
+
+从老DDN库同步到高铁专题库
+ssh sybiq@172.16.43.87
+Inspur!!
+sh /dataload/output/export_data_143_87.sh "a_enum" " and 1=1"
+
+从高铁专题库同步到DDN库
+sh /dataload/export_data.sh "dw_http_sum_xdr_sence_d" " and 1=1"
+

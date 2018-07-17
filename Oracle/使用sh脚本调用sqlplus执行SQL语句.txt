@@ -1,0 +1,74 @@
+使用sh脚本调用sqlplus执行SQL语句
+
+
+例：在资源库执行一段SQL
+资源库：sqlplus cmuser/LKJasd1#@irmsdb1 
+
+【执行一段SQL，不传参数进SQL】
+
+#!/bin/sh
+
+sqlplus cmuser/LKJasd1#@irmsdb1>file.log <<EOF
+
+delete from TRANS_ERROR_ROAD_ENODEB_D_CUR where day_key=20180108;
+
+exit
+
+EOF
+
+以上保存为20180109.sh   执行sh 20180109.sh  查看日志 tail -f file.log
+
+
+【执行一段SQL，传参数进SQL】
+
+#!/bin/sh
+
+#sqlplus引用shell变量TABLENAME的值
+
+#注意赋值时，等号两边不能有空格
+
+DAY_KEY="$1"
+
+echo "DAY_KEY:    $DAY_KEY"
+echo "`date`"
+
+sqlplus -S cmuser/LKJasd1#@irmsdb1 <<EOF
+
+delete from TRANS_ERROR_ROAD_ENODEB_D_CUR where day_key=${DAY_KEY};
+commit;
+insert into TRANS_ERROR_ROAD_ENODEB_D_CUR
+(
+DAY_KEY
+,CITY_CODE
+,ENODEB_ID
+,ENODEB_NAME
+,ENODEB_IP
+,ROUTER_LINE_ID
+)
+select 
+    t4.DAY_KEY
+    ,t4.CITY_CODE
+    ,t4.ENODEB_ID                   --基站ID
+    ,t4.ENODEB_NAME
+    ,t4.ENODEB_IP
+    ,t2.int_id as ROUTER_LINE_ID    --路由段ID
+from c_ne_circuit t1
+inner join c_ne_circuit_path t2
+on t1.zh_label=t2.circuit_name
+inner join c_ne_ENODEB t3
+on (t1.ne_b=t3.int_id or t1.ne_e=t3.int_id) and t3.stateflag=0
+inner join TRANS_ERROR_ENODEB_MID t4
+on t3.int_id=t4.ENODEB_ID and t4.day_key=${DAY_KEY}
+where t1.stateflag=0 and t2.stateflag=0 and t1.STATE=0;
+commit;
+
+exit
+EOF
+
+echo "`date`"
+
+
+以上保存为 2018010902.sh   执行 sh 2018010902.sh 20180108  查看日志 tail -f file.log
+
+10.40.100.54  执行约8分钟
+sh /opt/uniload/DAL/daltool/db2db/pl/TRANS_ERROR_ROAD_ENODEB_D_CUR.sh 20180108

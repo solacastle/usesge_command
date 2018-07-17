@@ -1,0 +1,32 @@
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_16
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_17
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_18
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_19
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_20
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_21
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_22
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_23
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_24
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_25
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_26
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_27
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_28
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_29
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_30
+go
+truncate table O_VIP_USER_CELL_HZ_Q_HA_31

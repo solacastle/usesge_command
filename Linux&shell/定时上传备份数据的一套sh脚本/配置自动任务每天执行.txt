@@ -1,0 +1,12 @@
+crontab -e 编辑周期任务
+
+#--------unload_data_to_172.17.64.19--------
+00 17 * * * sh /dataload/groupftp/check_volte_1122.sh >>/dataload/groupftp/check_volte_1122.log
+
+每天晚上五点执行check_volte_1122.sh，记录日志到check_volte_1122.log
+
+
+
+#-------check_ptn---------
+00 * * * * sh /dataload/groupftp/check_ptn.sh >>/dataload/groupftp/check_ptn.log
+每小时0点执行一次check_ptn.sh，记录日志到check_ptn.log

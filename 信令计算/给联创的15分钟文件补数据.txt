@@ -1,0 +1,23 @@
+daladmin用户登录10.40.100.54
+
+补数据方法：
+cd /opt/uniload/tools/PM_OI
+PM_IO_report.pl -d dwNJ -config_file ./report_config_to_lianchuang_q_nj.xml -date_time "2017-10-18 16:45:00" -USR1 -USR2
+trans_ftp.sh "2017-10-18 16:45:00" NJ
+
+重新检查数据：
+cd /data/uniload/data/lianchuang
+ll Q_NJ_LTE_CELL_201710181645_P01_END.CSV
+
+
+
+
+
+ip 10.40.9.133 
+
+usename="ftpcj"
+passwd="Ftpcj001"
+
+sftp ftpcj@10.40.9.133 
+Ftpcj001
+

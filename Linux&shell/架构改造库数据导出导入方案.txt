@@ -1,0 +1,44 @@
+从架构改造库同步到新DDN库脚本：
+ssh sybiq@172.16.48.238
+Inspur!!
+sh /dataload/export_data_v1.sh "B1H_HTTP_CELL_10" " and DAY_KEY=20171017 and HOUR_KEY=10"
+sh /dataload/export_data.sh "B1H_HTTP_CELL_10" " and DAY_KEY=20171017 and HOUR_KEY=10"
+
+【老库】
+【从架构改造库导出】
+ssh sybiq@172.16.48.238
+Inspur!!
+
+/dataload/export_data_v1_daochu.sh "tmpcount_test_20180118" " and 1=1"
+
+目前导出文件存放路径为：  /data/load_unload  修改导出文件路径: vi /dataload/export_data_v1_daochu.sql
+
+【从架构改造库导入】
+/dataload/export_data_v1_daoru.sh "tmpcount_test_20180118" " and 1=1"
+
+修改导出文件路径：
+/dataload/import_data_daoru.sql
+
+
+【新库】
+【从架构改造库导出】
+ssh sybiq@172.16.64.50
+Inspur!!
+
+/dataload/output/export_data_v1_daochu.sh "tmpcount_test_20180118" " and 1=1"
+
+目前导出文件存放路径为：  /data/load_unload  修改导出文件路径：vi /dataload/output/export_data_v1_daochu.sql
+
+【从架构改造库导入】
+/dataload/output/export_data_v1_daoru.sh "tmpcount_test_20180118" " and 1=1"
+
+修改导入文件路径：/dataload/output/import_data_daoru.sql
+
+
+
+【从DDN库导出】
+10.40.96.135
+
+/dataload/output/export_data_v1_daochu.sh "DW_DM_SAT_RULES_PROBLEM" " and 1=1"
+
+目前导出文件存放路径为：  /dataload/load_unload  修改导出文件路径：vi /dataload/output/export_data_v1_daochu.sql

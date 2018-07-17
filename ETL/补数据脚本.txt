@@ -1,0 +1,27 @@
+补数据脚本
+
+clear;ps -ef |grep java
+
+ETL任务开启
+134~136,141~147
+sh /dataload/Inspur/apps/tools-etl_v3/dbservice_1/bin/startup.sh
+sh /dataload/Inspur/apps/tools-etl_v3/db2db_manager/bin/startup.sh
+
+142,143,145
+同步任务目录名修改  已修改
+cd /dataload/
+mv output2 output
+
+
+补同步目录名修改
+141,142,143,145
+cd /dataload/
+mv handwork2 handwork
+
+ll /dataload/handwork
+142~146
+补同步任务解锁起来
+#14 * * * *  cd /dataload/handwork;/dataload/handwork/sq.sh >>sq.log 
+#15 * * * *  cd /dataload/handwork;/dataload/handwork/NT.sh >>NT.log 
+#16 * * * *  cd /dataload/handwork;/dataload/handwork/nj_new.sh1 >>NJ.log 
+#17 * * * *  cd /dataload/handwork;/dataload/handwork/xr_bucai >>xr_bucai.log

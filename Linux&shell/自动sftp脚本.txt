@@ -1,0 +1,28 @@
+#!/bin/sh
+
+#file=`cd $2; find *.CSV -mmin +1`
+file=`cd /srcdata/export_data; find *.txt -mmin +1`
+
+if [ ! -d "/srcdata/ftp/" ]; then
+ mkdir  /srcdata/ftp/
+fi
+
+sftp_ip=$1
+echo "begin ftp===$sftp_ip==="`date`
+for list in $file
+ do
+  echo list:$list;
+  mv /srcdata/export_data/$list /srcdata/ftp/
+cd /srcdata/ftp/
+sftp dataload@$sftp_ip -n<<!
+cd /srcdata/import_data/
+lcd /srcdata/ftp
+put "$list"  "$list.tmp"
+rename "$list.tmp" "$list"
+ls -l "$list"
+bye
+!
+
+rm /srcdata/ftp/$list
+done
+echo "end ftp===="`date`

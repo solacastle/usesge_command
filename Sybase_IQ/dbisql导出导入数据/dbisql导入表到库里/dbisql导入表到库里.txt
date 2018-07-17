@@ -1,0 +1,60 @@
+dnisql导入表到库里
+
+执行：
+dbisql -c "dsn=dw@datacenter" -onerror continue -nogui /dataload/groupftp/DW_DM_VOLTE_TERMINAL_H.sql1
+
+配置文件：
+LOAD TABLE dw.DW_DM_VOLTE_TERMINAL_H_MID
+( 
+city_id                      '|',
+province_id                  '|',
+starttime                    '|',
+imei_tac                      '|',
+VoLteAudOrigCallSuccNbr      '|',
+VoLteAudTermCallSuccNbr      '|',
+VoLteAudOrigCallNbr          '|',
+VoLteAudTermCallNbr          '|',
+VoLteAudSuccRate             '|',
+VoLteAudNetCallNbr '|',
+VoLteAudNetSuccRate '|',
+VoLteVidOrigCallSuccNbr      '|',
+VoLteVidTermCallSuccNbr      '|',
+VoLteVidOrigCallNbr          '|',
+VoLteVidTermCallNbr          '|',
+VoLteVidSuccRate             '|',
+VoLteVidNetCallNbr '|',
+VoLteVidNetSuccRate '|',
+VoLteAudOffLineNbr           '|',
+VoLteAudOrigCallReplyNbr     '|',
+VoLteAudTermCallReplyNbr     '|',
+VoLteAudOffLineRate          '|',
+VoLteVidOffLineNbr           '|',
+VoLteVidOrigCallReplyNbr     '|',
+VoLteVidTermCallReplyNbr     '|',
+VoLteVidOffLineRate          '|',
+VoLteOrigCallTimeVtoV  '|',
+VoLteOrigCallTime            '|',
+SRVCCSwitchSuccNbr           '|',
+SRVCCSwitchAttNbr            '|',
+SRVCCSwitchSuccRate          '|',
+SRVCCSwitchTime              '|',
+RTCPMos                      '|',
+RTPMosUl                     '|',
+RTPMosDl                     '|',
+RTPPktLossUl                 '|',
+VoLTETerminalNbr             '\x0a'
+)
+USING FILE  '/share/group_file/volte_load/VoLTE_NRTM_terminal_JS_201701040700_P01_END.csv'
+QUOTES OFF
+ESCAPES OFF
+skip 1;
+commit;
+
+
+导入的文件样式:
+city_id|province_id|starttime|imei_tac|VoLteAudOrigCallSuccNbr|VoLteAudTermCallSuccNbr|VoLteAudOrigCallNbr|VoLteAudTermCallNbr|VoLteAudSuccRate|VoLteAudNetCallNbr|VoLteAudNetSuccRate|VoLteVidOrigCallSuccNbr|VoLteVidTermCallSuccNbr|VoLteVidOrigCallNbr|VoLteVidTermCallNbr|VoLteVidSuccRate|VoLteVidNetCallNbr|VoLteVidNetSuccRate|VoLteAudOffLineNbr|VoLteAudOrigCallReplyNbr|VoLteAudTermCallReplyNbr|VoLteAudOffLineRate|VoLteVidOffLineNbr|VoLteVidOrigCallReplyNbr|VoLteVidTermCallReplyNbr|VoLteVidOffLineRate|VoLteOrigCallTimeVtoV|VoLteOrigCallTimeVtoAll|SRVCCSwitchSuccNbr|SRVCCSwitchAttNbr|SRVCCSwitchSuccRate|SRVCCSwitchTime|RTCPMos|RTPMosUl|RTPMosDl|RTPPktLossUl|VoLTETerminalNbr
+0527|250|20170104070000000|86297203|108|116|123|117|93.33|123|100.00|0|0|0|0|0.00|0|0.00|0|85|63|0.00|0|0|0|0.00|3240.83|5663.88|0|0|0.00|0.00|4.03|4.34|3.90|0.00|791
+0527|250|20170104070000000|86160203|5|5|10|6|62.50|10|100.00|0|0|0|0|0.00|0|0.00|0|4|4|0.00|0|0|0|0.00|0.00|5451.20|0|0|0.00|0.00|0.00|4.34|4.34|0.00|399
+0527|250|20170104070000000|86917902|18|9|20|9|93.10|20|100.00|0|0|0|0|0.00|0|0.00|0|12|6|0.00|0|0|0|0.00|0.00|5854.05|0|0|0.00|0.00|0.00|0.00|0.00|0.00|31
+0527|250|20170104070000000|86834902|0|0|0|0|0.00|0|0.00|0|0|0|0|0.00|0|0.00|0|0|0|0.00|0|0|0|0.00|0.00|0.00|0|0|0.00|0.00|0.00|0.00|0.00|0.00|2
+

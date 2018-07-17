@@ -1,0 +1,22 @@
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_02
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_03
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_04
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_05
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_06
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_07
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_08
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_09
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_10
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_11
+go
+truncate table O_SE_P2P_CELLTAC_L1_D_SZ_12

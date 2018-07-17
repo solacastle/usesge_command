@@ -1,0 +1,66 @@
+虚拟路测清洗机任务进程
+进程检查：
+ps -ef |grep ll_clean
+进程开启：
+sh /u03/ll_clean/soft/apache-tomcat-8.5.14/bin/startup.sh
+进程关闭；
+sh /u03/ll_clean/soft/apache-tomcat-8.5.14/bin/shutdown.sh
+进程样例：
+clean01:[/u03/Inspur/apps/tools-etl_v3.5] ps -ef |grep ll_clean
+tmn      13070     1  3 18:05 pts/1    00:00:42 /u03/ll_clean/soft/jdk1.7.0_80/bin/java -Djava.util.logging.config.file=/u03/ll_clean/soft/apache-tomcat-8.5.14/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -classpath /u03/ll_clean/soft/apache-tomcat-8.5.14/bin/bootstrap.jar:/u03/ll_clean/soft/apache-tomcat-8.5.14/bin/tomcat-juli.jar -Dcatalina.base=/u03/ll_clean/soft/apache-tomcat-8.5.14 -Dcatalina.home=/u03/ll_clean/soft/apache-tomcat-8.5.14 -Djava.io.tmpdir=/u03/ll_clean/soft/apache-tomcat-8.5.14/temp org.apache.catalina.startup.Bootstrap start
+tmn      52949 50291  0 18:23 pts/2    00:00:00 grep ll_clean
+clean01:[/u03/Inspur/apps/tools-etl_v3.5]
+
+清洗完文件输出位置： 
+/xdr_result_data/LTE_NEW/HTTP/HTTP_LL_RES
+
+检查结果：tmn/Inspur@)!%
+10.40.100.51/172.16.53.201     clean01      --ok     
+10.40.100.52/172.16.53.202     clean02      --ok     
+10.40.100.53/172.16.53.203     clean03      --ok     
+10.40.100.54/172.16.53.204     clean04      --未开启
+10.40.100.55/172.16.53.205     clean05      --ok     
+10.40.100.56/172.16.53.206     clean06      --ok     
+10.40.100.57/172.16.53.207     clean07      --ok     
+10.40.100.58/172.16.53.208     clean08      --ok     
+10.40.108.134/172.16.33.134    pssig134     --ok     
+10.40.96.121/172.16.40.185     clean121     --ok     
+10.40.96.122/172.16.40.186     clean122     --ok     
+10.40.96.123/172.16.40.187     clean123     --ok     
+10.40.96.124/172.16.40.184     clean124     --ok     
+10.40.108.135/172.16.33.205    zcacc01      --ok     
+10.40.108.136/172.16.33.206    zcacc02      --ok     
+10.40.108.137/172.16.33.207    zcacc03      --ok     
+10.40.108.139/172.16.33.209    xwtec05      --ok     
+10.40.108.145/172.16.33.210    xwtec06      --ok     
+----从53上复制清洗ll_clean程序
+cd /u03
+sftp tmn@172.16.53.203
+Inspur@)!%
+mget /u03/ll_clean.tar.gz
+
+----
+入库表检查108.234，108.112
+select 
+hour_key 
+,count(*)
+from stage.L_4G_S1_U_HTTP_VIRTUAL_21
+where day_key=20170821
+group by hour_key
+order by 1
+
+入库发布任务：
+06-L_4G_S1_U_HTTP_入库_虚拟路测-11节点
+06-L_4G_S1_U_HTTP_入库_虚拟路测
+清洗任务：
+26-U1-HTTP清洗-LTE(虚拟路测)_WX_1
+26-U1-HTTP清洗-LTE(虚拟路测)_WX_2
+26-U1-HTTP清洗-LTE(虚拟路测)_WX_3
+26-U1-HTTP清洗-LTE(虚拟路测)_WX_4
+26-U1-HTTP清洗-LTE(虚拟路测)_WX_5
+
+清洗任务拆分，表结构字段长度加长，输出目录调整
+检查机器清洗是否正常运行/检查清洗目录有文件输出
+apptype_id问题
+原来列28改29
+29改102

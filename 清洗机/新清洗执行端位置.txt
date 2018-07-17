@@ -1,0 +1,47 @@
+﻿新清洗v5执行端位置
+
+10.40.100.55
+cd /u03/Inspur/apps/
+sftp tmn@10.40.100.55
+Inspur@)!%
+mget /u03/Inspur/apps/tool-etl_v5.tar
+
+
+cd /u03/Inspur/apps/
+tar -cvf tool-etl_v5.tar tool-etl_v5
+tar -xvf tool-etl_v5.tar
+
+sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/startup.sh
+关闭：  sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/shutdown.sh
+
+tail -f /u03/Inspur/apps/tool-etl_v5/dbservice_1/logs/db2db.log
+tail -f /u03/Inspur/apps/tool-etl_v5/dbservice_1/logs/maintain.log
+
+
+10.40.100.51/172.16.53.201     clean01                          --ok
+10.40.100.52/172.16.53.202     clean02                          --ok
+10.40.100.53/172.16.53.203     clean03                          --ok
+10.40.100.54/172.16.53.204     clean04     --不布置清洗
+10.40.100.55/172.16.53.205     clean05                          --ok
+10.40.100.56/172.16.53.206     clean06                          --ok
+10.40.100.57/172.16.53.207     clean07                          --ok
+10.40.100.58/172.16.53.208     clean08                          --ok
+10.40.108.134/172.16.33.134    pssig134    --不布置清洗
+10.40.96.121/172.16.40.185     clean121    --不布置清洗
+10.40.96.122/172.16.40.186     clean122                         --ok
+10.40.96.123/172.16.40.187     clean123                         --ok
+10.40.96.124/172.16.40.184     clean124                         --ok
+10.40.108.135/172.16.33.205    zcacc01                          --ok 
+10.40.108.136/172.16.33.206    zcacc02                          --ok 
+10.40.108.137/172.16.33.207    zcacc03                          --ok 
+10.40.108.138/172.16.33.208    zcacc04                          --ok 
+10.40.108.139/172.16.33.209    xwtec05                          --ok     --暂停
+10.40.108.145/172.16.33.210    xwtec06                          --ok     --暂停
+
+select hour_key,count(*) from stage.L_4G_S1_C_MME_YC_29 where day_key=20170929 group by hour_key
+01-C1-S1MME清洗-LTE_2分支-LYG
+select hour_key,count(*) from stage.L_4G_S1_C_MME_LYG_29 where day_key=20170929 group by hour_key
+01-C1-S1MME清洗-LTE_2分支-HA
+select hour_key,count(*) from stage.L_4G_S1_C_MME_HA_29 where day_key=20170929 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_C_MME_SQ_29 where day_key=20170929 group by hour_key
+

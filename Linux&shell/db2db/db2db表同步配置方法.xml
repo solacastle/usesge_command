@@ -1,0 +1,77 @@
+db2db表同步配置方法
+
+例-从资源库(oracle库)同步数据到新DDN库
+资源库数据库信息配置
+oracle库 10.40.9.131 cmuser/LKJasd1#  1521  irmsdb1
+
+1. 增加新的任务列表(trans)，设置1个Datasource id (任务列表ID&源数据库信息ID，这个ID对应perl调度任务参数-o 20171221001)
+daladmin用户登录10.40.100.54   daladmin/ZLTdkj06
+cd /opt/uniload/DAL/dalconfig/db2db/config  （可以执行dbcon命令跳转到db2db工具的配置文件目录）
+vi db_inf.config.xml
+
+<Datasource id="20171221001">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="trans" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+2. 为新的任务列表(trans)添加pm支持模块，方法：从之前的任务复制pm支持模块并修改名称
+cd /opt/uniload/DAL/daltool/db2db/vendors
+cp txt_voicequality_p_db2db.pm txt_trans_p_db2db.pm
+vi txt_trans_p_db2db.pm
+修改第1行
+package txt_trans_p_db2db;
+
+
+3. 配置任务列表(trans)的源数据库和目标数据库信息：
+(Omc id源数据库信息ID,填写之前配置的Datasource id任务列表ID，这个ID对应perl调度任务参数-o 20171221001)
+cd /opt/uniload/
+vi .dalconfig.ini
+源库(添加一条包含任务列表ID的新记录)
+<Omc id="20171221001" User="cmuser" Password="LKJasd1#" Address="10.40.9.131" Nename="cmuser">
+        <OmcDB id="1" Type="Oracle" DbServer="IRMSDB" Database="" User="cmuser" Password="LKJasd1#" Db_locale="" Client_locale=""/>
+</Omc>
+目标库(如果已有则不变更)
+<TargetDB id="dw144" Type="Sybase" DbServer="DataCenter_S144" Database="DataCenter" User="dw" Password="dw123" Address="172.16.53.144" Port="4000"/>
+
+3.5 配置本地数据库快速链接信息(通常已配置，不变更)
+--oracle  --DbServer
+vi $ORACLE_HOME/network/admin/tnsnames.ora
+
+--sybiq --
+vi /usr/local/freetds/etc/freetds.conf
+[DataCenter_S144]
+        host = 172.16.53.144
+        port = 4000
+        tds version = 4.2
+;                                                                                    
+验证(可用eng连接)：
+dbisql -c "uid=dw;pwd=dw123;eng=DataCenter_S144" -nogui 
+dbisql -c "uid=dw;pwd=dw123" -host 172.16.53.144  -port 4000 -nogui
+
+4. 配置同步任务
+先复制1份新的任务配置文件，作为新创建的任务列表trans的配置文件，格式如下，只修改中间部分
+cd /opt/uniload/DAL/dalconfig/db2db/config 
+cp txt_voicequality_p_db2db.config.xml txt_trans_p_db2db.config.xml
+修改配置文件，添加同步表的配置信息，每个新任务需要设置一个新的任务ID，这个ID对应perl调度任务参数-m 20171221001001
+cd /opt/uniload/DAL/dalconfig/db2db/config
+vi txt_trans_p_db2db.config.xml
+从源库表v_rms_enodeb_state同步到目标库表rms_enodeb_state
+
+5. 测试同步perl任务(日期是字符格式传进去的)
+cd /opt/uniload/DAL/daltool/db2db/pl
+样例1：
+format_control_IQ_V3.pl -o 20171221001 -t 233 -mt pm -destdb dw144 -m 20171221001001 -USR1 -USR2 -tf SWXT -load_type server -put_prototype ftp -start "20171220" -tag "'"
+样例2：
+format_control_IQ_V3.pl -o 20171221001 -t 233 -mt pm -destdb dw144 -m 20171221001002 -USR1 -USR2 -tf SWXT -load_type server -put_prototype ftp -start "2017-12-21 00:00:00" -stop "2017-12-22 00:00:00" -tag "'"
+样例3：
+format_control_IQ_V3.pl -o 20171221001 -t 233 -mt pm -destdb dw144 -m 20171221001003 -USR1 -USR2 -tf SWXT -load_type server -put_prototype ftp -start "20171220" -tag "'"
+
+6. 创建调度sh脚本
+sh /opt/uniload/DAL/daltool/db2db/pl/voice_trans_unload.sh
+
+7. 设置自动调度任务
+0 3 * * * csh -c "cd /opt/uniload/DAL/daltool/db2db/pl/;voice_trans_unload.sh>>voice_trans_unload.log" >/dev/null 2>&1
+日志：
+tail -f /opt/uniload/DAL/daltool/db2db/pl/voice_trans_unload.log

@@ -1,0 +1,12 @@
+APP的名称和ID配置表、IP地址的两种格式计算方法
+
+
+
+select distinct host,sum(sessreq) from O_SE_P2P_SP_DOMAIN_L3_D_01 WHERE DAY_KEY=20170125    and APP_TYPE_ID=4120
+and SP_IP='167772332'
+group by host
+
+10.0.0.172
+select 10*256*256*256 + 0*256*256  +  0*256 + 172    --167772332   IP地址2种格式计算
+
+select * from DW_DM_group_app_type_zc where APP_TYPE_NAME like '%咪咕音乐%'         --APP_TYPE_ID 4120

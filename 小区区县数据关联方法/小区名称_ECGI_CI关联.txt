@@ -1,0 +1,5 @@
+
+小区名称、CI、ECGI互相关联
+select distinct ZH_LABEL,CI,ECGI from swxt.rms_eutrancell where TIME_STAMP>='2017-06-15 00:00:00' and 
+
+TIME_STAMP<'2017-06-16 00:00:00'

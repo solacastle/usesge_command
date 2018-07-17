@@ -1,0 +1,69 @@
+登录要安装ftp服务的机器
+ssh root@172.16.40.110
+dinglicom
+
+检查本机是否安装了vsftpd
+rpm -qa |grep vsftpd
+
+从231复制安装包
+cd /root
+sftp sybiq@172.16.43.95
+Inspur!!
+mget /mnt/Packages/vsftpd-2.2.2-12.el6_5.1.x86_64.rpm
+mget /mnt/Packages/ftp-0.17-54.el6.x86_64.rpm
+
+--(从yum源安装：yum install vsftpd -y)
+从本地rpm文件安装
+yum localinstall /root/vsftpd-2.2.2-12.el6_5.1.x86_64.rpm -y
+yum localinstall /root/ftp-0.17-54.el6.x86_64.rpm -y
+
+配置vsftpd用户组,加入vsftpd和nobody用户到组里(默认连接用户)
+groupadd vsftpd
+adduser  -g vsftpd -s /sbin/nologin vsftpd
+adduser  -g vsftpd -s /sbin/nologin nobody
+
+重启vsftpd服务：(使用vsftpd软件，主要包括如下几个命令)
+启动ftp命令
+service vsftpd start
+停止ftp命令
+service vsftpd stop
+重启ftp命令
+service vsftpd restart
+
+vsftpd的配置(配置暂时不用修改)
+ftp的配置文件主要有三个，位于/etc/vsftpd/目录下，分别是：
+/etc/vsftpd/ftpusers    (黑名单，总是有效) 该文件用来指定那些用户不能访问ftp服务器。
+
+/etc/vsftpd/user_list   可以是黑名单或白名单,这取决于/etc/vsftpd/vsftpd.conf配置文件内的userlist_enable和userlist_deny两项配置。
+userlist_enable和userlist_deny两个选项联合起来针对的是：
+本地全体用户（除去ftpusers中的用户）和出现在user_list文件中的用户以及不在在user_list文件中的用户这三类用户集合进行的设置。
+当且仅当userlist_enable=YES时：userlist_deny项的配置才有效，user_list文件才会被使用；当其为NO时，无论userlist_deny项为何值都是无效的，本地全体用户（除去ftpusers中的用户）都可以登入FTP
+当userlist_enable=YES时，userlist_deny=YES(default)时：user_list是一个黑名单，即：所有出现在名单中的用户都会被拒绝登入；
+当userlist_enable=YES时，userlist_deny=NO时：user_list是一个白名单，即：只有出现在名单中的用户才会被准许登入(user_list之外的用户都被拒绝登入)；另外需要特别提醒的是：使用白名单后，匿名用户将无法登入！除非显式在user_list中加入一行：anonymous
+
+/etc/vsftpd/vsftpd.conf   vsftpd的主配置文件
+
+ftp连接测试：
+
+229测试连接100.54：
+ftp 172.16.53.204
+daladmin
+ZLTdkj06
+
+100.54机器测试连接229：
+ftp 172.16.40.110
+tmn
+Inspur@)!%
+
+---------------
+172.16.48.229    --已安装
+172.16.48.230    --已安装
+172.16.48.231    --已安装
+172.16.48.232    --已安装
+172.16.48.234    --已安装
+172.16.48.235    --已安装
+172.16.48.236    --已安装
+172.16.48.237    --已安装
+172.16.48.238    --已安装
+172.16.48.239    --已安装
+172.16.48.240    --已安装

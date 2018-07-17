@@ -1,0 +1,1 @@
+update HIGH_RAILWAY_AUTO_TAC_20160829 set station_name=replace(station_name,char(10),'')

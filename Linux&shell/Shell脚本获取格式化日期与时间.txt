@@ -1,0 +1,79 @@
+linux 下把秒转换成日期
+date -d @1494864000
+
+
+把一个日期格式字符转换为其他日期格式
+date -d "2016-12-24 10:45:12" "+%Y-%m-%d %H:%M:%S" 
+date -d "2016-12-24 10:45:12" "+%Y%m%d" 
+
+在格式化的同时做时间加减：
+date -d "1 hour 2016-12-23 10:00:00" "+%Y-%m-%d %H:%M:%S"
+
+
+
+    #获取昨天日期 yyyyMMdd 格式
+    yesterday=`date --date='1 days ago' +%Y%m%d`
+    #获取昨天日期 yyyy-MM-dd 格式
+    yesterday2=`date --date='1 days ago' +%Y-%m-%d`
+
+
+    #获取今天日期 yyyyMMdd 格式
+    today=`date --date='0 days ago' +%Y%m%d`
+    #获取今天日期 yyyy-MM-dd 格式
+    today2=`date --date='0 days ago' +%Y-%m-%d`
+
+
+    #获取明天日期 yyyyMMdd 格式
+    today=`date --date='1 days' +%Y%m%d`
+    #获取明天日期 yyyy-MM-dd 格式
+    today2=`date --date='1 days' +%Y-%m-%d`
+
+
+    #获取当前时间 yyyy-MM-dd HH:mm:ss 格式
+    nowtime=`date --date='0 days ago' "+%Y-%m-%d %H:%M:%S"`
+    #获取当前日间 HH:mm:ss 格式
+    nowtime2=`date --date='0 days ago' +%H:%M:%S`
+
+
+    #获取1小时前时间 yyyy-MM-dd HH:mm:ss 格式
+    onehourage=`date --date='1 hours ago' "+%Y-%m-%d %H:%M:%S"`
+    #获取1小时后时间 yyyy-MM-dd HH:mm:ss 格式
+    onehourage2=`date --date='1 hours' "+%Y-%m-%d %H:%M:%S"`
+
+
+    #获取2小时前时间 yyyy-MM-dd HH:mm:ss 格式
+    twohourage=`date --date='2 hours ago' "+%Y-%m-%d %H:%M:%S"`
+    #获取2小时后时间 yyyy-MM-dd HH:mm:ss 格式
+    twohourage2=`date --date='2 hours' "+%Y-%m-%d %H:%M:%S"`
+
+
+    #获取1个月前时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month ago' "+%Y-%m-%d %H:%M:%S"
+    #获取1个月加1天前时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month ago + 1 day ago' "+%Y-%m-%d %H:%M:%S"
+    #获取1个月减1天前时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month ago - 1 day ago' "+%Y-%m-%d %H:%M:%S"
+
+
+
+    #获取1个月加1天加1小时加1分钟加1秒钟前时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month ago + 1 day ago + 1 hour ago + 1 min ago + 1 sec ago' "+%Y-%m-%d %H:%M:%S"
+    #获取1个月加1天减1小时减1分钟减1秒钟前时间 yyyy-MM-dd HH:mm:ss 格式  可以 + - 滥用
+    date --date='1 month ago + 1 day ago - 1 hour ago - 1 min ago - 1 sec ago' "+%Y-%m-%d %H:%M:%S"
+
+
+    #获取1个月加1天加1小时加1分钟加1秒钟后时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month + 1 day  + 1 hour  + 1 min  + 1 sec ' "+%Y-%m-%d %H:%M:%S"
+
+
+    #获取1个月加1天减1小时减1分钟减1秒钟后时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 month + 1 day  - 1 hour  - 1 min  - 1 sec ' "+%Y-%m-%d %H:%M:%S"
+
+
+    #获取1年后1个月加1天减1小时减1分钟减1秒钟后时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 year 1 month + 1 day  - 1 hour  - 1 min  - 1 sec ' "+%Y-%m-%d %H:%M:%S"
+
+
+    #获取1年前1个月加1天减1小时减1分钟减1秒钟后时间 yyyy-MM-dd HH:mm:ss 格式
+    date --date='1 year 1 month + 1 day  - 1 hour  - 1 min  - 1 sec ' "+%Y-%m-%d %H:%M:%S"
+

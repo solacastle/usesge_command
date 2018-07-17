@@ -1,0 +1,41 @@
+集团上报 144>136
+
+修改数据库ODBC：
+DDN  132~137，139~143
+
+cd 
+cp .odbc.ini bak_.odbc.ini
+cat .odbc.ini
+sed -i "s/njlocal/DataCenter01/g"  `grep njlocal -rl //dataload/.odbc.ini`
+sed -i "s/4444/5000/g"  `grep 4444 -rl //dataload/.odbc.ini`
+
+sed -i "s/DataCenter/DataCenter01/g"  `grep DataCenter -rl //dataload/.odbc.ini`
+sed -i "s/4000/5000/g"  `grep 4000 -rl //dataload/.odbc.ini`
+cat .odbc.ini
+
+dbisql -c "dsn=dw@datacenter"  -onerror exit -nogui
+
+集团上报程序链接串替换
+
+grep "uid=dw;pwd=dw123;eng=DataCenter_S06"  /dataload/groupfile/*
+grep "dsn=dw@datacenter"  /dataload/groupfile/*
+
+grep "uid=dw;pwd=dw123;eng=DataCenter_S06"  /dataload/groupftp/*
+grep "dsn=dw@datacenter"  /dataload/groupftp/*
+
+
+sed -i "s/uid=dw;pwd=dw123;eng=DataCenter_S06/dsn=dw@datacenter/g"  `grep "uid=dw;pwd=dw123;eng=DataCenter_S06" -rl //dataload/groupfile/*`
+sed -i "s/-host 10.40.96.136 -port 4000//g"  `grep "10.40.96.136" -rl //dataload/groupfile/*`
+
+sed -i "s/uid=dw;pwd=dw123;eng=DataCenter_S06/dsn=dw@datacenter/g"  `grep "uid=dw;pwd=dw123;eng=DataCenter_S06" -rl //dataload/groupftp/*`
+sed -i "s/-host 10.40.96.136 -port 4000//g"  `grep "10.40.96.136" -rl //dataload/groupftp/*`
+
+
+同步脚本替换
+grep "uid=dw;pwd=dw123;eng=DataCenter_S12"  /dataload/output_bak/*.sh
+grep "dsn=dw@datacenter"  /dataload/output_bak/*.sh
+sed -i "s/uid=dw;pwd=dw123;eng=DataCenter_S12/dsn=dw@datacenter/g"  `grep "uid=dw;pwd=dw123;eng=DataCenter_S12" -rl //dataload/output_bak/*.sh`
+sed -i "s/-host 10.40.96.142 -port 4000//g"  `grep "10.40.96.142" -rl //dataload/output_bak/*.sh`
+DDN老库到新库同步脚本：
+10.40.96.142:
+sh /dataload/output_bak/export_data_ddn.sh "test_20170421" "and 1=1"

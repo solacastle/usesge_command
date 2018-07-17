@@ -1,0 +1,43 @@
+新DDN库集群ETL执行端布置
+
+
+集群任意节点执行 sp_iqmpxinfo 查看eng等信息
+
+主节点          172.16.53.128              DataCenter_master
+备用节点        172.16.53.129              DataCenter_S129
+计算节点：
+10.40.96.144/172.16.53.144       iqdb14    DataCenter_S144
+10.40.96.145/172.16.53.145       iqdb15    DataCenter_S145
+10.40.96.146/172.16.53.146       iqdb16    DataCenter_S146
+10.40.96.147/172.16.53.147       iqdb17    DataCenter_S147
+10.40.96.148/172.16.53.148       iqdb18    DataCenter_S148
+10.40.96.149/172.16.53.149       iqdb19    DataCenter_S149 (东信使用，不布置ETL执行端服务)
+
+创建目录，复制并解压安装包：
+cd /dataload/Inspur/apps
+mkdir tools-etl_v5
+cd tools-etl_v5
+
+sftp sybiq@172.16.48.229
+Inspur!!
+mget /dataload/Inspur/apps/tools-etl_v5/db2db_mini.tar
+
+tar -xvf db2db_mini.tar
+
+修改odbc里的eng信息
+cd 
+vi .odbc.ini
+%s/DataCenter_S14/DataCenter_S144/g
+
+关闭ETL服务：
+sh /dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/stopDump.sh
+检查服务情况：
+ps -ef |grep java
+开启ETL服务：
+sh /dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/startup.sh
+查看日志：
+tail -f /dataload/Inspur/apps/tools-etl_v5/db2db_mini/logs/db2db.log
+
+
+
+

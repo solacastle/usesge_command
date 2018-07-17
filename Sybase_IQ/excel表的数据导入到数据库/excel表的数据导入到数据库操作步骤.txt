@@ -1,0 +1,13 @@
+excel表的数据导入到数据库
+
+本次样例在10.40.96.136上操作
+1. 在数据库创建对应表 rms_mscid_city
+2. 把excel保存成csv文件，默认以逗号分隔，行头需要有数据库表字段名 
+   因为是以逗号分隔，所以需要查找替换来去掉所有文本中已有的逗号
+    /share/group_file/volte_load/rms_mscid_city.csv
+3. 配置导入配置文件
+    /dataload/groupftp/rms_mscid_city.sql 
+4. 执行命令导入
+dbisql -c "dsn=dw@datacenter" -onerror exit -nogui /dataload/groupftp/rms_mscid_city.sql
+
+dbisql -c "dsn=swxt@datacenter" -onerror exit -nogui /dataload/Inspur/apps/tools-etl/guoxiaotian/201704.sql

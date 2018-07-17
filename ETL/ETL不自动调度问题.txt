@@ -1,0 +1,16 @@
+ETL不自动调度问题：
+ssh sybiq@172.16.48.230
+Inspur!!
+
+修改参数为false
+vi /dataload/Inspur/apps/tools-etl_v5/db2db_mini/conf/common/db2db.properties
+
+etl.mq.redis.isShare=false
+
+重启客户端：
+/dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/stopDump.sh
+ps -ef |grep java
+/dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/startup.sh
+
+修改后需要重启，重启后观察日志：
+tail -f /dataload/Inspur/apps/tools-etl_v5/db2db_mini/logs/db2db.log

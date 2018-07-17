@@ -1,0 +1,4 @@
+找db2db的某个表的执行语句
+
+10.40.100.54
+grep DW_DM_NETWORK_CDR_SBC_SUBITEM_H /data/uniload/bin/interface_job.xml

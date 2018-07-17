@@ -1,0 +1,3 @@
+统计一列出现的数据分类和次数
+
+awk 'BEGIN{FS="|";OFS="|"}{count[$1]++}END{for(name in count)print name,count[name]}' HTTP_NRTM_RCST_JS_20170809_P001.CSV

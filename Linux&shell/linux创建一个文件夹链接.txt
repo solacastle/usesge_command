@@ -1,0 +1,6 @@
+linux创建一个文件夹链接
+ln -s /iqdata/srcdata/ /srcdata
+
+
+效果：lrwxrwxrwx    1 root  root     16 Feb 20 18:28 srcdata -> /iqdata/srcdata/
+根目录下/srcdata指向/iqdata/srcdata/

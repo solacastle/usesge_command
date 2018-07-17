@@ -1,0 +1,57 @@
+10.40.100.54
+先同步到中间库，再分发到各个库
+
+同步2个表：rms_eutrancell和RMS_ENODEB
+
+clean04-/home/daladmin> 
+clean04-/home/daladmin> ra
+clean04-/opt/uniload/bin> cat cmuser_to_dw.sh 
+cd /opt/uniload/DAL/daltool/db2db/pl
+format_control_IQ.pl -o 20130519 -t 12345678900 -mt cm -destdb dw135 -m 22 -USR1 -USR2 -tf SWXT
+format_control_IQ.pl -o 20130519 -t 12345678900 -mt cm -destdb swxtnew -m 1,2,3,4,5,6,7,8,21,22 -USR1 -USR2 -tf SWXT
+format_control_IQ.pl -o 20130519 -t 12345678900 -mt cm -destdb dw216 -m 1,3,22,21 -USR1 -USR2 -tf SWXT
+
+./DAL/dalconfig/db2db/config/txt_swxt_c_db2db.config.xml
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dw145 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d dw145 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+##架构改造老库：
+format_load_sybase2.pl -t 111111 -s dw215 -d Realdata_S237 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d Realdata_S237 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dw234 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d dw234 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dw35 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d dw35 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -
+DELETE_FILE
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dwTZ -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d dwTZ -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dw115 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d dw115 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+
+format_load_sybase2.pl -t 111111 -s dw215 -d dw184 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+
+
+##架构改造新库：
+cd /opt/uniload/DAL/daltool/db2db/pl
+format_load_sybase2.pl -t 111111 -s dw215 -d RealdataDB_S050 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110701 -USR1 -USR2 -LOAD -DELETE_FILE
+format_load_sybase2.pl -t 111111 -s dw215 -d RealdataDB_S050 -start "2017-11-07 00:00:00" -stop "2017-11-07 00:00:00" -c txt_swxt_c_db2db.config.xml -m 110702 -USR1 -USR2 -LOAD -DELETE_FILE
+
+
+vi  /opt/uniload/.dalconfig.ini
+
+
+<TargetDB id="RealdataDB_S050" Type="Sybase" DbServer="RealdataDB_S050" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.50" Port="4000"/>
+<TargetDB id="RealdataDB_S051" Type="Sybase" DbServer="RealdataDB_S051" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.51" Port="4000"/>
+<TargetDB id="RealdataDB_S052" Type="Sybase" DbServer="RealdataDB_S052" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.52" Port="4000"/>
+<TargetDB id="RealdataDB_S053" Type="Sybase" DbServer="RealdataDB_S053" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.53" Port="4000"/>
+<TargetDB id="RealdataDB_S054" Type="Sybase" DbServer="RealdataDB_S054" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.54" Port="4000"/>
+<TargetDB id="RealdataDB_S055" Type="Sybase" DbServer="RealdataDB_S055" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.55" Port="4000"/>
+<TargetDB id="RealdataDB_S056" Type="Sybase" DbServer="RealdataDB_S056" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.56" Port="4000"/>
+<TargetDB id="RealdataDB_S057" Type="Sybase" DbServer="RealdataDB_S057" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.57" Port="4000"/>
+<TargetDB id="RealdataDB_S058" Type="Sybase" DbServer="RealdataDB_S058" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.58" Port="4000"/>
+<TargetDB id="RealdataDB_S059" Type="Sybase" DbServer="RealdataDB_S059" Database="dw" User="dw" Password="Inspur2017" Address="172.16.64.59" Port="4000"/>
+

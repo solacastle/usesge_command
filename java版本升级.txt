@@ -1,0 +1,33 @@
+zheng:  nj sz
+
+13节点
+ssh sybiq@10.40.109.31
+Inspur!!
+
+查看java版本；   which java
+
+mkdir -p /dataload/Inspur/java 
+cd /dataload/Inspur/java 
+sftp tmn@172.16.53.206
+
+Inspur@)!%
+
+cd /u03/Inspur/java
+lcd /dataload/Inspur/java 
+get jdk-8u151-linux-x64.tar.gz
+exit
+tar -xvf jdk-8u151-linux-x64.tar.gz
+
+cd
+vi .bash_profile
+
+export JAVA_HOME=/dataload/Inspur/java/jdk1.8.0_151
+export PATH=$JAVA_HOME/bin:$PATH
+
+exit
+which java
+
+/dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/shutdown.sh 
+ps -ef |grep java
+
+/dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/startup.sh 

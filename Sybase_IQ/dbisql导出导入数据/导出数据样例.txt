@@ -1,0 +1,12 @@
+SET TEMPORARY OPTION temp_extract_name1='/srcdata/DW_LIST_BASE_USER_LIST_W_12_NJ.csv';
+SET TEMPORARY OPTION Temp_Extract_Append = 'OFF';
+SET TEMPORARY OPTION Temp_Extract_Binary ='OFF';
+set temporary option temp_extract_null_as_empty = 'OFF';
+SET TEMPORARY OPTION temp_extract_swap ='OFF';
+set temporary option temp_extract_column_delimiter = ',';
+select * from DW_LIST_BASE_USER_LIST_W_12 where CITY_NAME='南京'
+
+
+dbisql -c "dsn=dw@datacenter" -onerror exit -nogui DW_LIST_BASE_USER_LIST_W_12.sql
+
+cp /srcdata/DW_LIST_BASE_USER_LIST_W_12*.csv .

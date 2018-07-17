@@ -1,0 +1,7 @@
+linux-数据库连接串配置
+
+10.40.100.54
+配置DBserver信息
+vi /usr/local/freetds/etc/freetds.conf
+配置连接串
+vi /opt/uniload/.dalconfig.ini

@@ -1,0 +1,10 @@
+select datediff(ms,'1970-01-01','2016-12-09')-(8*3600*1000)        把日期转换成毫秒ms
+
+
+select DATEADD(SS, 1475337580 ,'1970-01-01 08:00:00')                  把秒转化成日期
+select DATEADD(SS, 1484495999559/1000 ,'1970-01-01 08:00:00')            把毫秒转化成日期
+
+
+select dateformat(DATEADD(SS, 1484495999559/1000 ,'1970-01-01 08:00:00') ,'yyyymmdd')     转化成day_key
+
+select dateformat(DATEADD(SS, 1486630800 ,'1970-01-01 08:00:00') ,'hh')      转化成hour_key

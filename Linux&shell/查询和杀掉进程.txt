@@ -1,0 +1,5 @@
+查询进程：
+ps -ef |grep dm_swxt_0.sh
+
+强制杀掉进程：
+kill -s 9 158025

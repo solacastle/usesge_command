@@ -1,0 +1,2 @@
+下次服务器重启的时候，需要将防火墙关闭：
+切换root用户，执行service iptables stop

@@ -1,0 +1,30 @@
+DDN库ETL任务和同步停止和启动
+------------------------------------ stop
+ETL 补采补同步 停止（03基础层-数据补同步和补采）
+134~136，141~147
+sh /dataload/Inspur/apps/tools-etl_v3/db2db_manager/bin/stop.sh
+sh /dataload/Inspur/apps/tools-etl_v3/dbservice_1/bin/stop.sh
+
+142,143,145,146
+cd /dataload/ ; mv output output2
+检查
+ll /dataload/output/*.sh
+
+clear ; ps -ef |grep java
+
+clear ; ps -ef |grep hand
+
+kill -9 10001 10002
+
+-----------------------------------  start
+134~136，141~147
+sh /dataload/Inspur/apps/tools-etl_v3/dbservice_1/bin/startup.sh
+sh /dataload/Inspur/apps/tools-etl_v3/db2db_manager/bin/startup.sh
+
+
+142,143,145,146
+cd /dataload/ ; mv output2 output 
+检查
+ll /dataload/output/*.sh
+
+ETL 补采补同步 开启（03基础层-数据补同步和补采）

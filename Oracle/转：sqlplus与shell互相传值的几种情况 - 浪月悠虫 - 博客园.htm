@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>转：sqlplus与shell互相传值的几种情况 - 浪月悠虫 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-kubrick.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/bundle-kubrick-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/xieon1986/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/xieon1986/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/xieon1986/wlwmanifest.xml">
+<script async="" src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/analytics.js"></script><script src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/jquery-2.js"></script>
+<script type="text/javascript">var currentBlogApp = 'xieon1986', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="header">
+    
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/xieon1986/">岁月的星空</a></h1>
+<p id="tagline"></p>
+</div>
+<div id="wrapper">
+<div id="main">
+    
+<div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/xieon1986/p/4165013.html">转：sqlplus与shell互相传值的几种情况</a>
+		</h2>
+		<div class="postText"><div id="cnblogs_post_body" class="blogpost-body"><p>sqlplus与shell互相传值的几种情况</p>
+<p>&nbsp;</p>
+<p>情况一：在shell中最简单的调用sqlplus</p>
+<p>$cat test.sh</p>
+<p>#!/bin/sh</p>
+<p>sqlplus oracle/oracle@oracle&gt;file.log &lt;&lt;EOF</p>
+<p>select * from test;</p>
+<p>exit</p>
+<p>EOF&nbsp;&nbsp;#注意EOF要顶格写</p>
+<p>$sh test.sh</p>
+<p>$cat file.log</p>
+<p>--省略若干系统提示信息-------</p>
+<p>SQL&gt;</p>
+<p>EMPNO&nbsp;&nbsp;&nbsp;EMPNAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPTNO</p>
+<p>-----&nbsp;&nbsp;&nbsp;-------------&nbsp;&nbsp;&nbsp;&nbsp;-----&nbsp;&nbsp;&nbsp;&nbsp;------</p>
+<p>10002&nbsp;&nbsp;&nbsp;Frank Naude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20</p>
+<p>10001&nbsp;&nbsp;&nbsp;Scott Tiger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40</p>
+<p>--省略若干系统提示信息-------</p>
+<p>将执行过程重定向入文件file.log，可通过cat file.log查看</p>
+<p>&nbsp;</p>
+<p>情况二：直接将sqlplus的值赋值给shell变量</p>
+<p>$cat test.sh</p>
+<p>#!/bin/sh</p>
+<p>#&nbsp;将sqlplus的结果输出给变量VALUE</p>
+<p># set命令的使用可查询手册</p>
+<p>#注意shell中等号两边不能有空格</p>
+<p>VALUE=`sqlplus -S /nolog &lt;&lt;EOF</p>
+<p>set heading off feedback off pagesize 0 verify off echo off</p>
+<p>conn oracle/oracle@oracle</p>
+<p>select count(*) from test;</p>
+<p>exit</p>
+<p>EOF`</p>
+<p>#输出记录数</p>
+<p>echo "The number of rows is $VALUE."</p>
+<p>$sh test.sh</p>
+<p>The number of rows is&nbsp;&nbsp;&nbsp;&nbsp;2.</p>
+<p>显示结果正确，表test共2条记录</p>
+<p>&nbsp;</p>
+<p>情况三：间接将sqlplus的值赋值给shell变量</p>
+<p>$cat test.sh</p>
+<p>#!/bin/sh</p>
+<p>#利用COL column NEW_VALUE variable定义变量</p>
+<p>#sqlplus执行完后最后返回值为v_coun</p>
+<p>#利用$?将最后返回值赋值给VALUE,也即为test的记录数</p>
+<p>sqlplus -S /nolog &lt;&lt;EOF</p>
+<p>set heading off feedback off pagesize 0 verify off echo off</p>
+<p>conn oracle/oracle@oracle</p>
+<p>col coun new_value v_coun</p>
+<p>select count(*) coun from test;</p>
+<p>exit v_coun</p>
+<p>EOF</p>
+<p>VALUE="$?"</p>
+<p>echo "The number of rows is $VALUE."</p>
+<p>$sh test.sh</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</p>
+<p>The number of rows is 2.</p>
+<p>脚本执行结果中第一个2为sqlplus返回值，第二个2为VALUE的值</p>
+<p>&nbsp;</p>
+<p>情况四：将shell变量的值传给sqlplus使用</p>
+<p>$cat test.sh</p>
+<p>#!/bin/sh</p>
+<p>#sqlplus引用shell变量TABLENAME的值</p>
+<p>#注意赋值时，等号两边不能有空格</p>
+<p>TABLENAME="test"</p>
+<p>sqlplus -S oracle/oracle@oracle &lt;&lt;EOF</p>
+<p>select * from ${TABLENAME};</p>
+<p>exit</p>
+<p>$sh test.sh</p>
+<p>EMPNO 
+EMPNAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAL
+ DEPTNO</p>
+<p>----- -------------------------------------------------- ---------- ------</p>
+<p>10002 Frank 
+Naude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500
+ 20</p>
+<p>10001 Scott 
+Tiger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000
+ 40</p>
+<p>脚本执行结果为：select * from test；的结果</p>
+<p>&nbsp;</p>
+<p>情况五：通过交互方式手工输入shell变量值</p>
+<p>$cat test.sh</p>
+<p>#!/bin/sh</p>
+<p>#将手工输入变量值读入变量TABLENAME</p>
+<p>echo&nbsp;&nbsp;"Enter the tablename you want to select:"</p>
+<p>read TABLENAME</p>
+<p>sqlplus -S oracle/oracle@oracle &lt;&lt;EOF</p>
+<p>select * from ${TABLENAME};</p>
+<p>exit</p>
+<p>$sh test.sh</p>
+<p>#按提示输入表名test</p>
+<p>Enter the tablename you want to select:</p>
+<p>test</p>
+<p>&nbsp;</p>
+<p>EMPNO 
+EMPNAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAL
+ DEPTNO</p>
+<p>----- -------------------------------------------------- ---------- ------</p>
+<p>10002 Frank 
+Naude&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500
+ 20</p>
+<p>10001 Scott 
+Tiger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000
+ 40</p>
+<p>脚本执行结果为select * from test的执行结果</p>
+<p>&nbsp;</p>
+<p>本文出自 “<a href="http://nbmonster.blog.51cto.com/">To_Be_Monster_Of_IT</a>” 博客，请务必保留此出处<a href="http://nbmonster.blog.51cto.com/1977736/665767">http://nbmonster.blog.51cto.com/1977736/665767</a></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(4165013,cb_blogId,1);green_channel_success(this,'谢谢推荐！');">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow('f347420b-63cf-dd11-9e4d-001cf0cd104b');" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/xieon1986/" target="_blank"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/sample_face.gif" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/xieon1986/">浪月悠虫</a><br>
+            <a href="http://home.cnblogs.com/u/xieon1986/followees">关注 - 1</a><br>
+            <a href="http://home.cnblogs.com/u/xieon1986/followers">粉丝 - 21</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow('f347420b-63cf-dd11-9e4d-001cf0cd104b');return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(4165013,'Digg')">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(4165013,'Bury')">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/xieon1986/p/4165001.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/xieon1986/p/4165001.html" title="发布于2014-12-15 15:37">转：sqlplus使用总结</a><br><a href="http://www.cnblogs.com/xieon1986/p/4165107.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/xieon1986/p/4165107.html" title="发布于2014-12-15 16:10">SQL 基础--&gt; NEW_VALUE 的使用</a><br></div>
+</div>
+
+</div>
+		<p class="postfoot">
+			posted on <span id="post-date">2014-12-15 15:38</span> <a href="http://www.cnblogs.com/xieon1986/">浪月悠虫</a> 阅读(<span id="post_view_count">9013</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=4165013" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(4165013);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=40607,cb_entryId=4165013,cb_blogApp=currentBlogApp,cb_blogUserGuid='f347420b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2014/12/15 15:38:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+	</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login('commentform');">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型工控、组态\仿真、建模CAD源码2018！</a><br><a href="https://cloud.tencent.com/developer/support-plan?fromSource=gwzcw.710852.710852.710852" target="_blank">【推荐】加入腾讯云自媒体扶持计划，免费领取域名&amp;服务器</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://ke.qq.com/next/index.html?from=176158" target="_blank"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20180108123632644-2119592979.png" alt="ke0108" width="300" height="250"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/586800/" target="_blank">传斗鱼今年进行首次公开募股 拟募集4亿美元资金</a><br> ·  <a href="https://news.cnblogs.com/n/586799/" target="_blank">W3C官方推荐使用新发布的HTML5.2</a><br> ·  <a href="https://news.cnblogs.com/n/586798/" target="_blank">中国45%的书年销售不到10本，这种状况已经很久了</a><br> ·  <a href="https://news.cnblogs.com/n/586797/" target="_blank">宜家黑客：每一件宜家产品，都可以“开源”升级</a><br> ·  <a href="https://news.cnblogs.com/n/586796/" target="_blank">英伟达CES发布多款新品：最强车载处理器Drive Xavier令人瞩目</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://click.aliyun.com/m/34770/" target="_blank"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/24442-20171208101900738-116140477.jpg" alt="阿里云C2-1208" width="468" height="60"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/585502/" target="_blank">步入云计算</a><br> ·  <a href="http://kb.cnblogs.com/page/531409/" target="_blank">以操作系统的角度述说线程与进程</a><br> ·  <a href="http://kb.cnblogs.com/page/141729/" target="_blank">软件测试转型之路</a><br> ·  <a href="http://kb.cnblogs.com/page/177402/" target="_blank">门内门外看招聘</a><br> ·  <a href="http://kb.cnblogs.com/page/112506/" target="_blank">大道至简，职场上做人做事做管理</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+    
+</div>
+<div id="rightmenu">
+    
+        
+<h3>公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/xieon1986/">浪月悠虫</a><br>园龄：<a href="https://home.cnblogs.com/u/xieon1986/" title="入园时间：2008-07-21">9年5个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/xieon1986/followers/">21</a><br>关注：<a href="https://home.cnblogs.com/u/xieon1986/followees/">1</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow('f347420b-63cf-dd11-9e4d-001cf0cd104b')">+加关注</a></div><script>getFollowStatus('f347420b-63cf-dd11-9e4d-001cf0cd104b')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+
+        
+<h3>导航</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" href="http://www.cnblogs.com/">博客园</a></li>
+			<li><a id="blog_nav_myhome" href="http://www.cnblogs.com/xieon1986/">首页</a></li>
+			<li><a id="blog_nav_newpost" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+			<li><a id="blog_nav_contact" accesskey="9" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB">联系</a></li>
+			<li><a id="blog_nav_rss" href="http://www.cnblogs.com/xieon1986/rss">订阅</a><a id="blog_nav_rss_image" href="http://www.cnblogs.com/xieon1986/rss"><img src="%E8%BD%AC%EF%BC%9Asqlplus%E4%B8%8Eshell%E4%BA%92%E7%9B%B8%E4%BC%A0%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5%20-%20%E6%B5%AA%E6%9C%88%E6%82%A0%E8%99%AB%20-%20%E5%8D%9A%E5%AE%A2%E5%9B%AD_files/xml.gif" alt="订阅"></a>
+			</li><li><a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+        <div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" title="Calendar" cellspacing="0" cellpadding="0">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar('2017/12/01');return false;">&lt;</a></td><td align="center">2018年1月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar('2018/02/01');return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" abbr="日" scope="col" align="center">日</th><th class="CalDayHeader" abbr="一" scope="col" align="center">一</th><th class="CalDayHeader" abbr="二" scope="col" align="center">二</th><th class="CalDayHeader" abbr="三" scope="col" align="center">三</th><th class="CalDayHeader" abbr="四" scope="col" align="center">四</th><th class="CalDayHeader" abbr="五" scope="col" align="center">五</th><th class="CalDayHeader" abbr="六" scope="col" align="center">六</th></tr><tr><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td class="CalWeekendDay" align="center">6</td></tr><tr><td class="CalWeekendDay" align="center">7</td><td align="center">8</td><td class="CalTodayDay" align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td class="CalWeekendDay" align="center">13</td></tr><tr><td class="CalWeekendDay" align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td class="CalWeekendDay" align="center">20</td></tr><tr><td class="CalWeekendDay" align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td class="CalWeekendDay" align="center">27</td></tr><tr><td class="CalWeekendDay" align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td></tr><tr><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td><td class="CalOtherMonthDay" align="center">10</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+        <div id="blog_stats">
+<h3>统计</h3>
+	<ul>
+		<li>随笔 - 54
+		</li><li>文章 - 54
+		</li><li>评论 - 8
+		</li><li>引用 - 0
+	</li>
+</ul></div>
+        <div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk" type="text">&nbsp;<input onclick="zzk_go()" value="找找看" id="btnZzk" class="btn_my_zzk" type="button"></div>
+<div id="widget_my_google" class="div_my_zzk"><input name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk" type="text">&nbsp;<input onclick="google_go()" value="谷歌搜索" class="btn_my_zzk" type="button"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/xieon1986/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/xieon1986/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/xieon1986/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/xieon1986/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/xieon1986/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<h3 class="catListTitle">我的标签</h3>
+<div id="MyTag">
+<ul>
+<li><a href="http://www.cnblogs.com/xieon1986/tag/Asp.net/">Asp.net</a>(12)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/oracle/">oracle</a>(7)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/javascript/">javascript</a>(5)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/ASP.NET%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6/">ASP.NET自定义控件</a>(4)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/ListBox/">ListBox</a>(2)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/sql/">sql</a>(2)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/sqlplus/">sqlplus</a>(1)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/TreeView/">TreeView</a>(1)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/%E7%BB%91%E5%AE%9A/">绑定</a>(1)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/%E5%A4%87%E4%BB%BD/">备份</a>(1)</li><li><a href="http://www.cnblogs.com/xieon1986/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+		<h3>随笔档案</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/xieon1986/archive/2016/01.html">2016年1月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/xieon1986/archive/2015/04.html">2015年4月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/xieon1986/archive/2015/01.html">2015年1月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/xieon1986/archive/2014/12.html">2014年12月 (5)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/xieon1986/archive/2014/11.html">2014年11月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/xieon1986/archive/2014/09.html">2014年9月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/xieon1986/archive/2014/08.html">2014年8月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/xieon1986/archive/2014/07.html">2014年7月 (7)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/xieon1986/archive/2014/02.html">2014年2月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/xieon1986/archive/2013/12.html">2013年12月 (3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/xieon1986/archive/2013/11.html">2013年11月 (10)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/xieon1986/archive/2013/10.html">2013年10月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/xieon1986/archive/2013/09.html">2013年9月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/xieon1986/archive/2013/08.html">2013年8月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/xieon1986/archive/2013/01.html">2013年1月 (3)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/xieon1986/archive/2012/12.html">2012年12月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/xieon1986/archive/2012/11.html">2012年11月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_17" href="http://www.cnblogs.com/xieon1986/archive/2012/10.html">2012年10月 (4)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_18" href="http://www.cnblogs.com/xieon1986/archive/2012/09.html">2012年9月 (1)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_19" href="http://www.cnblogs.com/xieon1986/archive/2012/07.html">2012年7月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_20" href="http://www.cnblogs.com/xieon1986/archive/2010/03.html">2010年3月 (2)</a> </li>
+			
+				<li><a id="CatList_LinkList_0_Link_21" href="http://www.cnblogs.com/xieon1986/archive/2009/04.html">2009年4月 (1)</a> </li>
+			
+				</ul>
+			
+	
+		<h3>文章分类</h3>
+		
+				<ul>
+			
+				<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/xieon1986/category/179645.html">AJAX(2)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/xieon1986/category/187277.html">ASP.NET(11)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/xieon1986/category/187279.html">C#(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/xieon1986/category/183201.html">css(3)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/xieon1986/category/179742.html">JavaScript(14)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/xieon1986/category/188939.html">winform(1)</a> </li>
+			
+				<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/xieon1986/category/180441.html">数据库操作(21)</a> </li>
+			
+				</ul>
+			
+	</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<h3 class="catListTitle">最新评论</h3>
+<div class="RecentComment" id="RecentComments">
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/xieon1986/archive/2012/11/26/2789226.html#3730261">1. Re:oracle一次插入多条数据</a></li>
+        <li class="recent_comment_body">insert all into CarPlateInfo values(sys_guid(), 1,'陕A',0) into CarPlateInfo values(sys_guid(), 2,陕B'......</li>
+        <li class="recent_comment_author">--沉默哥</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html#3710096">2. Re:JS Math.sin() 与 Math.cos() 用法</a></li>
+        <li class="recent_comment_body">X坐标=a + Math.sin(2*Math.PI / 360) * r ；Y坐标=b + Math.cos(2*Math.PI / 360) * r这里可能搞反了 cos0=1 sin0=0 当圆......</li>
+        <li class="recent_comment_author">--囧囧有神123</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html#3709437">3. Re:JS Math.sin() 与 Math.cos() 用法</a></li>
+        <li class="recent_comment_body">我的天，，看的我一脸懵逼</li>
+        <li class="recent_comment_author">--小菜鸡的梦</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html#3697225">4. Re:JS Math.sin() 与 Math.cos() 用法</a></li>
+        <li class="recent_comment_body">@xiao252距离高三毕业8年了。今天用到三角函数，发现全忘了也不能说当时没好好学。不过忘得一干二净了。 = =...</li>
+        <li class="recent_comment_author">--尼玛旦</li>
+        <li class="recent_comment_title"><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html#3694393">5. Re:JS Math.sin() 与 Math.cos() 用法</a></li>
+        <li class="recent_comment_body">以前该好好学数学的。唉~</li>
+        <li class="recent_comment_author">--xiao252</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<h3 class="catListTitle">阅读排行榜</h3>
+<div class="RecentComment" id="TopViewPosts"> 
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/16/2863077.html">1. oracle查询多行数据合并成一行数据(38717)</a></li><li><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html">2. JS Math.sin() 与 Math.cos() 用法(38670)</a></li><li><a href="http://www.cnblogs.com/xieon1986/archive/2012/11/26/2789226.html">3. oracle一次插入多条数据(34280)</a></li><li><a href="http://www.cnblogs.com/xieon1986/p/4165013.html">4. 转：sqlplus与shell互相传值的几种情况(9010)</a></li><li><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880366.html">5. 在Asp.net中为用户控件(.ascx)添加自定义属性详解(6442)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<h3 class="catListTitle">评论排行榜</h3>
+<div class="RecentComment" id="TopCommentsPosts">
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/28/2880367.html">1. JS Math.sin() 与 Math.cos() 用法(5)</a></li><li><a href="http://www.cnblogs.com/xieon1986/p/3937159.html">2. 定时导出Oracle数据表到文本文件的方法(1)</a></li><li><a href="http://www.cnblogs.com/xieon1986/archive/2012/11/26/2789226.html">3. oracle一次插入多条数据(1)</a></li></ul></div>
+</div></div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div class="RecentComment">
+	<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/xieon1986/archive/2012/11/26/2789226.html">1. oracle一次插入多条数据(3)</a></li><li><a href="http://www.cnblogs.com/xieon1986/archive/2013/01/16/2863077.html">2. oracle查询多行数据合并成一行数据(2)</a></li><li><a href="http://www.cnblogs.com/xieon1986/p/3937159.html">3. 定时导出Oracle数据表到文本文件的方法(1)</a></li><li><a href="http://www.cnblogs.com/xieon1986/p/3447623.html">4. 解决用ASP.NET下载文件时,文件名为乱码的问题(1)</a></li><li><a href="http://www.cnblogs.com/xieon1986/p/3364487.html">5. oracle procedure存储过程(pl/sql)_使用declare cursor_begin end嵌套(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+    
+</div>
+</div>
+<div class="clear"></div>
+
+<div id="footer">
+	Powered by: 
+	<a id="Footer1_Hyperlink3" name="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>	Copyright © 浪月悠虫
+</div>
+
+
+
+</body></html>

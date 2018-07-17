@@ -1,0 +1,17 @@
+#!/bin/sh
+
+usename="dataload"
+passwd="Inspur!!"
+echo $passwd
+echo $usename
+file_path="/srcdata"
+sftp_ip="172.16.53.144"
+
+echo $file_path
+sftp dataload@$sftp_ip -n<<!
+cd $file_path
+lcd /srcdata/
+get "$1.txt"
+ls -l "$1.txt"
+bye
+!

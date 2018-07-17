@@ -1,0 +1,29 @@
+10.39.198.15   端口: 1521    SID:  xngldb
+load_log/My_678#
+
+成功：
+insert into a_load_log (TABLE_NAME,DATA_TIME,TIME_SIZE,DATA_RECEIVE_TIME,DATA_STATE) values ('B1D_ALL_CELL_L3_$month$',to_date('$year$-$month$-$day$ 00:00:00','yyyy-mm-dd hh24:mi:ss'),'天',sysdate,1)
+
+失败：
+insert into a_load_log (TABLE_NAME,DATA_TIME,TIME_SIZE,DATA_RECEIVE_TIME,DATA_STATE) values ('B1D_ALL_CELL_L3_$month$',to_date('$year$-$month$-$day$ 00:00:00','yyyy-mm-dd hh24:mi:ss'),'天',sysdate,0)
+
+
+成功：
+insert into a_load_log (TABLE_NAME,DATA_TIME,TIME_SIZE,DATA_RECEIVE_TIME,DATA_STATE) values ('DW_DM_TERMINAL_PER_VOLTE_TAC_D_$month$',to_date('$year$-$month$-$day$ 00:00:00','yyyy-mm-dd hh24:mi:ss'),'天',sysdate,1)
+
+失败：
+insert into a_load_log (TABLE_NAME,DATA_TIME,TIME_SIZE,DATA_RECEIVE_TIME,DATA_STATE) values ('DW_DM_TERMINAL_PER_VOLTE_TAC_D_$month$',to_date('$year$-$month$-$day$ 00:00:00','yyyy-mm-dd hh24:mi:ss'),'天',sysdate,0)
+
+
+year
+datatime="$day_key$";
+ret=datatime.substring(0, 4)
+
+month
+datatime="$day_key$";
+ret=datatime.substring(4, 6)
+
+day
+datatime="$day_key$";
+ret=datatime.substring(6, 8)
+

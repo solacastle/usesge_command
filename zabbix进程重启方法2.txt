@@ -1,0 +1,24 @@
+zabbix 启动
+10.40.100.52
+启动： 
+Tmn用户
+/u03/ll_clean/soft/apache2.4.25/bin/httpd -k start
+su - mysql
+mysql!@#$
+/etc/init.d/mysqld start
+
+
+ 
+/usr/local/zabbix/sbin/zabbix_server
+
+停止：
+Tmn用户
+
+/u03/ll_clean/soft/apache2.4.25/bin/httpd -k stop
+
+
+su - mysql
+mysql!@#$
+/etc/init.d/mysqld stop
+
+Kill zabbix用户进程

@@ -1,0 +1,37 @@
+cd /iqdata;tail -f *iqmsg|grep sp_import
+cd /iqdata16;grep error *iqmsg
+
+10.40.96.132
+10.40.96.133
+10.40.96.134
+10.40.96.135
+10.40.96.136
+10.40.96.137
+10.40.96.139
+10.40.96.140
+10.40.96.141
+10.40.96.142
+10.40.96.143
+
+O_SE_P2P_SP_DOMAIN_L3_H_TZ_0102
+
+
+---------------------------------坏表重建
+select count(*) from O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR
+
+sp_iqcheckdb 'check table dw.O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR'   --大表谨慎check
+
+alter table O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR rename O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR_tmp
+
+select * into O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR from O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR_tmp where 0=1
+
+select count(*) from O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR_tmp
+
+insert into O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR
+select * from O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR_tmp
+
+drop table O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR_tmp
+
+重新赋权查询权限：
+grant select on O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR to q_eastcom
+

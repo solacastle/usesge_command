@@ -1,0 +1,56 @@
+linux查看磁盘IO情况：
+
+1. 用top命令查看，其中有IO等待所占用的CPU时间的百分比,高过30%时IO压力高（查看53.0%wa）
+
+Tasks: 1712 total,   3 running, 1708 sleeping,   0 stopped,   1 zombie
+Cpu(s): 45.2%us,  0.9%sy,  0.0%ni,  0.7%id, 53.0%wa,  0.0%hi,  0.2%si,  0.0%st
+Mem:  264494972k total, 237186552k used, 27308420k free,  1208356k buffers
+Swap: 261488632k total,        0k used, 261488632k free, 13260956k cached
+
+   PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND                               
+ 76621 njlocal   20   0  128g  90g  37m S 2924.3 35.7  18819:39 iqsrv16                             
+  5113 root      RT   0 14.4g  85m 3412 S 39.1  0.0 120007:52 multipathd                            
+206201 dataload  20   0 43.2g 1.1g  11m S  5.2  0.4 266:18.17 java                                  
+ 69311 dataload  20   0 16244 2540  948 R  2.6  0.0   0:42.97 top                                   
+104916 dataload  20   0 63536 5012 2884 S  2.3  0.0   0:08.95 ssh       
+
+2. 用 vmstat 查看查看b参数(等待资源的进程数) b 524
+
+procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+68 524      0 26636632 1208480 13385780    0    0    55    29    0    0  1  0 98  0  0
+ 
+ 
+3. 用iostat -x 1 10 |head -10   (虚拟环境可能磁盘过多)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.05    0.00    0.24    0.40    0.00   98.31
+
+Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     5.38    9.77   30.21   519.78   175.14    17.38     0.01    0.27   0.16   0.64
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     8.03     0.00    0.42   0.42   0.00
+dm-0              0.00     0.00    0.00    0.02     0.05     0.14     9.71     0.00    0.85   0.20   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     8.00     0.00    1.03   0.84   0.00
+
+查看%util 0.64   %idle 98.31
+如果 %util 接近 100%，说明产生的I/O请求太多，I/O系统已经满负荷，该磁盘可能存在瓶颈。
+idle小于70% IO压力就较大了,一般读取速度有较多的wait.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

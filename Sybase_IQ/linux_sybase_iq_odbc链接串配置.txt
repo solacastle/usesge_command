@@ -1,0 +1,16 @@
+linux-odbc链接串配置
+
+查看odbc配置信息
+cat /sybiq/.odbc.ini
+
+查看本机eng：
+cat /iqdata/param.cfg
+查看DatabaseName可以在datastuio里看
+
+如果有问题可以修改连接串：
+cp /sybiq/.odbc.ini /sybiq/.odbc.ini_bak
+sed s/LocalXdr303_S03/LocalXdrG03_S03/g /sybiq/.odbc.ini_bak > /sybiq/.odbc.ini_bak2
+sed s/DatabaseName=LocalXdr/DatabaseName=LocalXdr03/g /sybiq/.odbc.ini_bak2 > /sybiq/.odbc.ini
+
+测试连接
+dbisql -c "dsn=stage@datacenter" -nogui

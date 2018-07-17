@@ -1,0 +1,28 @@
+配置10.40.100.54清洗机的文件自动删除：
+
+在这个配置文件里添加自动删除规则
+10.40.100.54
+vi /opt/uniload/common/pl/delfile.xml
+
+例：
+<Measurement id="14" Type="*.txt" Directory="/tmp" Interval="1" Option="" />
+       
+ID不要重复    Type删除文件匹配规则    Directory从哪个目录删除     Interval保留天数
+
+
+<Measurement id="10" Type="*.*" Directory="/opt/uniload/data/DB2FILE/format_load_sybase" Interval="0.3" Option="0.3" />
+
+     ID不要重复    Type删除文件匹配规则    Directory从哪个目录删除                     Interval保留天数
+	 
+	 
+	 
+执行删除 ： cd /opt/uniload/common/pl;delfile.pl -USR2
+crontab:   */5 * * * * csh -c "cd /opt/uniload/common/pl;delfile.pl -USR2" >/dev/null 2>&1
+
+
+-------------------
+查看100.54进程积压可能导致/DATA下数据积压
+ps -ef | grep daladmin
+
+cd /data/uniload/bin
+KillProc.pl 进程关键字

@@ -1,0 +1,23 @@
+配置sql配置文件：
+LOAD TABLE dw.DW_DM_VOLTE_TERMINAL_1
+( 
+city_id                      '|',
+province_id                  '|',
+starttime                    '|',
+imei_tac                      '|',
+VoLTETerminalNbr             '\x0a'
+)
+USING CLIENT FILE  '/share/group_file/volte_load/VoLTE_NRTM_terminal_JS_201701040700_P01_END.csv
+QUOTES OFF
+ESCAPES OFF
+skip 1;
+commit;
+
+
+修改的地方：
+USING CLIENT FILE  '/share/group_file/volte_load/VoLTE_NRTM_terminal_JS_201701040700_P01_END.csv
+     这里增加CLIENT，就是使用本地文件导入远程库
+	 
+ 
+执行：
+dbisql -c "uid=dw;pwd=dw123;eng=DataCenter_S06" -host 10.40.96.136 -port 4000 -onerror exit -nogui /dataload/groupftp/1.sql

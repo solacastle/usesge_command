@@ -1,0 +1,8 @@
+select a.host,a.sp_ip,APP_TYPE_Name as service,round(sum(SESSREQ)*1.0,4) SESSREQ1,CASE WHEN SESSREQ1=0 THEN 0 ELSE CASE WHEN ABS((SESSREQ1-sum(COLUMN5))*1.0/SESSREQ1*100)>10000 THEN 0 ELSE round((SESSREQ1-sum(COLUMN5))*1.0/SESSREQ1*100,4) END END AS SESS_RES_RATE,round(case when sum(COLUMN6)=0 then  null else sum(COLUMN7)/sum(COLUMN6) end ,4) as  SESS_RES_LATENCY,case when sum(DL_TRAFFIC_500_DELAY) =0 then 0 else  sum(DL_TRAFFIC_500)*1.0*8*1000/sum(DL_TRAFFIC_500_DELAY) end as DL_RATE_500,sum(ERROR_CODE1_CNT) as ERROR_CODE1_CNT,sum(ERROR_CODE2_CNT) as ERROR_CODE2_CNT,sum(ERROR_CODE3_CNT) as ERROR_CODE3_CNT,sum(ERROR_CODE4_CNT) as ERROR_CODE4_CNT,sum(ERROR_CODE5_CNT) as ERROR_CODE5_CNT,sum(ERROR_CODE_NREP_CNT) as ERROR_CODE_NREP_CNT 
+into #domain_js_temp 
+from O_SE_P2P_SP_DOMAIN_L3_4G_Q_JS_CUR a,DW_DM_GROUP_APP_TYPE_ZC b,dw_dm_co_sp_monitor c
+where QUARTER_KEY=QUARTER_KEY_V 
+and a.APP_TYPE_ID=b.app_type_id
+and (a.APP_TYPE_ID=c.app_type_id or a.sp_ip=c.sp_ip)
+group by a.host,a.sp_ip,APP_TYPE_NAME;
+

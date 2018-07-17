@@ -1,0 +1,2 @@
+调用存储过程导出数据
+sp_export_user_cell_se 'O_VIP_USER_cell_HZ_Q_wx_23','/dataload/User_Cell_SE_2016122310.txt','and start_time>=''2016-12-23 10:00:00'' and start_time<''2016-12-23 11:00:00'''

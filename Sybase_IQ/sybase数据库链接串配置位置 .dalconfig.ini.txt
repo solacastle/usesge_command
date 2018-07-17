@@ -1,0 +1,7 @@
+sybase数据库链接串配置位置：
+find / -name "*dalconfig*"
+
+可能位置
+/opt/Inspur/uniload/.dalconfig.ini
+
+/opt/uniload/.dalconfig.ini

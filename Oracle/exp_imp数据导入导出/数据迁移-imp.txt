@@ -1,0 +1,16 @@
+江苏移动网络连接 10.39.130.188
+/inspur/oracle/data
+
+
+imp ETL/My_678#@gxcj file=/inspur/oracle/data/ETL.dmp full=y
+imp METADB_FC/My_678#@gxcj file=/inspur/oracle/data/METADB_FC.dmp full=y
+
+*imp NPM_ADS/My_678#@gxcj file=/inspur/oracle/data/NPM_ADS.dmp full=y
+
+*imp WORKFLOW/My_678#@gxcj file=/inspur/oracle/data/WORKFLOW.dmp full=y
+
+imp METADB_TOPO/My_678#@gxcj file=/inspur/oracle/data/METADB_TOPO.dmp full=y
+imp METADB_V2/My_678#@gxcj file=/inspur/oracle/data/METADB_V2.dmp full=y
+imp REPORT_FIR/My_678#@gxcj file=/inspur/oracle/data/REPORT_FIR.dmp full=y
+imp SCHEDULE_SYS/My_678#@gxcj file=/inspur/oracle/data/SCHEDULE_SYS.dmp full=y
+imp METADB_HISTORY/My_678#@gxcj file=/inspur/oracle/data/METADB_HISTORY.dmp full=y

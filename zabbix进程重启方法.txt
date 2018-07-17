@@ -1,0 +1,25 @@
+zabbix进程重启方法
+
+登录zabbix用户
+su - zabbix
+zabbix
+
+ps -ef |grep zabbix
+杀掉所有zabbix进程
+zabbix     6018      1  0 Oct11 ?        00:00:00 /usr/local/zabbix/sbin/zabbix_agentd
+zabbix     6021   6018  0 Oct11 ?        00:35:20 /usr/local/zabbix/sbin/zabbix_agentd: collector [idle 1 sec]
+zabbix     6022   6018  0 Oct11 ?        00:14:53 /usr/local/zabbix/sbin/zabbix_agentd: listener #1 [waiting for connection]
+zabbix     6023   6018  0 Oct11 ?        00:14:42 /usr/local/zabbix/sbin/zabbix_agentd: listener #2 [waiting for connection]
+zabbix     6024   6018  0 Oct11 ?        00:14:59 /usr/local/zabbix/sbin/zabbix_agentd: listener #3 [waiting for connection]
+zabbix     6025   6018  0 Oct11 ?        00:01:10 /usr/local/zabbix/sbin/zabbix_agentd: active checks #1 [idle 1 sec]
+
+kill -9 6018      1
+kill -9 6021   6018
+kill -9 6022   6018
+kill -9 6023   6018
+kill -9 6024   6018
+kill -9 6025   6018
+
+
+重新开启
+/usr/local/zabbix/sbin/zabbix_agentd

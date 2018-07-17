@@ -1,0 +1,27 @@
+linux用户密码即将过期处理
+
+查看用户密码过期时间
+chage -l sybiq
+chage -l dataload
+
+----------------例：
+[dataload@iqdb14 tools-etl]$ chage -l dataload
+Last password change                                    : Jul 10, 2017
+Password expires                                        : Oct 08, 2017     --2017年9月8号过期
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 90
+Number of days of warning before password expires       : 7
+----------------
+
+修改密码可重置延长过期时间
+passwd
+先键入当前密码，再输入新密码，并确认新密码；然后再重复步骤，把密码改回去。
+
+用户默认密码：
+sybiq/Inspur!!
+dataload/inspur!!
+
+有时出现改密码命令输入后，显示不正常，可能需要修改会话字符类型为default或utf-8都试一下
+Kong@325

@@ -1,0 +1,11 @@
+综合监控平台
+http://10.40.94.227:8666/iBing/plugins/main/login.ilf
+yaofei/yaofei123
+
+
+后台日志：
+10.40.94.12 
+nwom/Dala@123
+
+cd /nwom/nwomapp/nwomdomain/logs
+tail -f kpireport_std.log

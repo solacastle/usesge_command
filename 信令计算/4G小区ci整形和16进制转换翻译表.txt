@@ -1,0 +1,10 @@
+4G小区ci整形和16进制转换翻译表，用于解决华为提供16进制CI经常翻译失败问题。
+
+ci---整形CI
+u16ci ---16进制带46000开头的CI
+
+--create table dw_dm_co_intci_u16ci (ci bigint null,u16ci varchar(32) null);
+
+insert into dw_dm_co_intci_u16ci(ci,u16ci) 
+select distinct a.ci ,'46000'||BigInt2HexStr(a.ci) from rms_eutrancell a left outer join dw_dm_co_intci_u16ci b
+on a.ci=b.ci where time_stamp='20171018' and b.ci is null

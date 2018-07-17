@@ -1,0 +1,31 @@
+FTP无法切换文件夹问题
+
+
+可能原因1：
+
+打开并编辑/etc/vsftpd/vsftpd.conf
+注释掉下行
+chroot_local_user=YES
+
+保存并重启vsftpd
+/etc/init.d/vsftpd restart
+
+
+
+
+
+Linux FTP 服务器中将用户限制在自己目录下的方法
+
+打开并编辑/etc/vsftpd/vsftpd.conf
+
+# vi /etc/vsftpd/vsftpd.conf
+
+添加或取消如下行注释
+
+chroot_local_user=YES
+
+保存并重启vsftpd
+
+# /etc/init.d/vsftpd restart
+
+现在只要切换到其它目录就会提示550 Failed to change directory

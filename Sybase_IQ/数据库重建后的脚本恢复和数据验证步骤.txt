@@ -1,0 +1,27 @@
+数据库重建后的脚本恢复和数据验证
+
+1. 重建存储过程
+
+2. 重建所有表,优先创建stage用户的表
+dw用户下表比较多时候，优先创建当天和后一天的表
+(按月分表先创建当月的，按天分表、双月分表优先创建当天和后一天的表，不分表的都要建)
+
+3. 重建视图
+
+4. 启动ETL执行端进程
+
+5. 观察数据入库情况和汇总情况，网页前台检查每台机器是否正常运行任务，数据是否正常入库；
+   检查stage表中数据情况
+   
+登录对应地市分库并执行语句来检查：（按天分表）
+--用户面：
+select hour_key,count(*) from stage.L_4G_S1_U_HTTP_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_S1U_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_DNS_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_IM_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_VIDEO_SQ_04 where day_key=20171004 group by hour_key
+
+--控制面：
+select hour_key,count(*) from stage.L_4G_S1_C_MME_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_C_S6A_SQ_04 where day_key=20171004 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_C_S10S11_SQ_04 where day_key=20171004 group by hour_key

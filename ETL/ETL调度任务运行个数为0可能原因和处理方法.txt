@@ -1,0 +1,12 @@
+ETL调度任务从上午10:08后，调度运行个数为0
+问题原因：
+         部署在54上redis 不能正常访问
+解决方法：
+         重启redis
+         重启方法：
+		 切换到tmn用户
+		 su - tmn
+		 Inspur@)!%
+         ps -ef |grep redis
+         kill - 9 杀掉对应的进程后
+         通过redis-server /etc/redis.conf  启动

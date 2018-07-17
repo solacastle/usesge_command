@@ -1,0 +1,7 @@
+﻿find限制文件大小，文件时间
+find -mmin +1 -mmin -6   寻找修改时间大于1分钟小于6分钟的文件
+
+寻找大于500字节的xx文件
+find -size +500c -name "Online_RTM_ServerIp_JS_*.CSV"
+
+

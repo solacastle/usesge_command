@@ -1,0 +1,3 @@
+cat /iqdata/param.cfg 
+-n  XdrLocal04_S08
+-x  tcpip{port=4000}

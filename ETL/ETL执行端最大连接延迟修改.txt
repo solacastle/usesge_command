@@ -1,0 +1,14 @@
+ETL执行端最大连接延迟修改
+
+cd /dataload/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/
+cd /dataload/Inspur/apps/tools-etl_v5/db2db_mini/conf/common
+
+检查 
+grep timeout db2db.properties
+
+修改
+vi db2db.properties
+
+etl.shell.ssh.timeout=7200
+
+

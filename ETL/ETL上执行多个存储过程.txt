@@ -1,0 +1,32 @@
+ETL上执行多个存储过程时要用以下写法：GO大写，空2行，首尾没有GO
+
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,00,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,01,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,02,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,03,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,04,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,05,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,06,'$day$'
+
+GO
+
+SP_DW_DM_NETWORK_CDR_NUMHEAD_SBC_SUBITEM_H $day_key$,23,'$day$'

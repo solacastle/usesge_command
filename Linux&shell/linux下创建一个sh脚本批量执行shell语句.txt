@@ -1,0 +1,5 @@
+把需要执行的shell命令写到一个文件test1.sh
+
+顺序执行语句并放到后台进行，记录日志 nohup sh ./test1.sh  >nohup.out &
+
+查看日志 tail -f nohup.out 

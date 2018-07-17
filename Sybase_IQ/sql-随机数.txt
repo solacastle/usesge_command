@@ -1,0 +1,7 @@
+sql-随机数
+
+select rand()
+获得一个0~1之间的随机数
+
+使用样例
+select convert(decimal(18,4),0.985+rand()*0.003)

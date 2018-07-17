@@ -1,0 +1,20 @@
+
+文件编码格式转换
+iconv -f UTF-8 -t GBK ruofugaixiaoqu_20171121.csv_3 -o ruofugaixiaoqu_20171121.csv_gbk
+
+
+
+用vim去除utf-8 BOM
+
+bom:UTF-8签名（UTF-8 signature）也叫做BOM（Byte Order Mark）
+
+用vim去除utf-8 BOM
+
+1.去掉utf-8 BOM
+:set nobomb
+
+2.保留utf-8 BOM
+:set bomb
+
+语句去除BOM
+cat ruofugaixiaoqu_20171121.csv_bak | sed 's/\xef\xbb\xbf//g' > ruofugaixiaoqu_20171121.csv_5

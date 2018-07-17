@@ -1,0 +1,7 @@
+sybase中锁表的处理
+切换到主节点（例如新南京库是96.130）
+运行sp_iqlocks查看锁表
+
+使用conn_id杀掉进程
+drop connection 29803
+

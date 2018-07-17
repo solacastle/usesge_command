@@ -1,0 +1,14 @@
+使用dbisql和简单配置文件从sybase导出数据的方法举例
+脚本详情参照  集团上报-VOLTE用户使用率需求-样例工具2
+
+编写配置文件  VoLTE_Utilization_City.sql，可以配置换行符（0x0A），下载的文件位置
+SET TEMPORARY OPTION temp_extract_name1='/srcdata/VoLTE_Utilization_City_20161130_tmp.txt';
+SET TEMPORARY OPTION Temp_Extract_Append = 'OFF';
+SET TEMPORARY OPTION Temp_Extract_Binary ='OFF';
+set temporary option temp_extract_null_as_empty = 'ON';
+SET TEMPORARY OPTION temp_extract_swap ='OFF';
+set temporary option temp_extract_column_delimiter = '0x0A';
+select * from VoLTE_Utilization_City;
+
+然后执行dnisql语句导出文件
+dbisql -c "uid=dw;pwd=dw123;eng=DataCenter_S06" -host 10.40.96.136 -port 4000 -onerror exit -nogui READ /dataload/groupfile/VoLTE_Utilization_City.sql

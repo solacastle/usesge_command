@@ -1,0 +1,24 @@
+出现可能XDR底层数据缺失的问题核查定位方法：
+
+1. 问题现象：出现端到端短信预警，底层stage用户下的表出现数据缺失，或比前1个小时数据量大幅减少。
+
+2. 核查出现预警的地市的对应类型的XDR表记录数，确认是否底层表数据缺失问题
+登录对应地市分库并执行语句来检查：（按天分表）
+--用户面：
+select hour_key,count(*) from stage.L_4G_S1_U_HTTP_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_S1U_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_DNS_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_IM_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_U_VIDEO_CZ_04 where day_key=20171104 group by hour_key
+
+--控制面：
+select hour_key,count(*) from stage.L_4G_S1_C_MME_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_C_S6A_CZ_04 where day_key=20171104 group by hour_key
+select hour_key,count(*) from stage.L_4G_S1_C_S10S11_CZ_04 where day_key=20171104 group by hour_key
+
+
+3. 登录ETL-54 / LTE-XDR模块 检查对应发布运行中的清洗、入库任务，最近时间点是否正常调度，如果出现大量清洗失败、入库失败则可能是清洗加载问题/源文件格式问题，联系研发核查问题
+
+4.从ETL-54上的发布任务里获得出现数据缺失的地市的接口机器IP，接口机器用户名密码统一为langchao/langchao@#$
+登录一台清洗机 例如 10.40.100.53, ftp连接接口机器，检查对应类型的文件提供情况。
+如果文件超过15分钟未提供，则是接口机器未提供文件，发邮件截图说明问题给项目经理

@@ -1,0 +1,25 @@
+ETL
+METADB_FC
+*NPM_ADS
+WORKFLOW
+METADB_TOPO
+METADB_V2
+REPORT_FIR
+SCHEDULE_SYS
+METADB_HISTORY
+
+/inspur/oracle/data
+
+
+exp ETL/My_678#@dcpsdb1 file=/inspur/oracle/data/ETL.dmp
+exp METADB_FC/My_678#@dcpsdb1 file=/inspur/oracle/data/METADB_FC.dmp
+
+exp WORKFLOW/My_678#@dcpsdb1 file=/inspur/oracle/data/WORKFLOW.dmp   用户或密码有问题
+
+
+exp METADB_TOPO/My_678#@dcpsdb1 file=/inspur/oracle/data/METADB_TOPO.dmp
+exp METADB_V2/My_678#@dcpsdb1 file=/inspur/oracle/data/METADB_V2.dmp
+exp REPORT_FIR/My_678#@dcpsdb1 file=/inspur/oracle/data/REPORT_FIR.dmp
+exp SCHEDULE_SYS/My_678#@dcpsdb1 file=/inspur/oracle/data/SCHEDULE_SYS.dmp
+exp METADB_HISTORY/My_678#@dcpsdb1 file=/inspur/oracle/data/METADB_HISTORY.dmp
+ 

@@ -1,0 +1,16 @@
+LOAD TABLE dw.DW_DM_CO_TRANS_ENODEB
+( 
+ENODEB_NAME        ',',
+TRANS_NAME          '\x0a'
+)
+USING FILE  '/dataload/Inspur/apps/tools-etl_v5/guoxiaotian/DW_DM_CO_TRANS_ENODEB.csv'
+QUOTES OFF
+ESCAPES OFF
+skip 1;
+commit;
+
+
+--不需要跳过表头则删除上面的 skip 1;
+
+执行：
+dbisql -c "dsn=dw@datacenter" -onerror continue -nogui DW_DM_CO_TRANS_ENODEB.sql

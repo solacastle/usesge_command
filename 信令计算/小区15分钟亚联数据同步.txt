@@ -1,0 +1,7 @@
+小区15分钟亚联数据同步
+
+0,15,30,45 * * * * csh -c "cd /opt/uniload/bin;wrapper_v2.pl -o 1 -f tycj_job2.xml -j PM_IO_15_minute -destdb dwNJ -bminute 30 -cycle 15" >/dev/null 2>&1
+0,15,30,45 * * * * csh -c "cd /opt/uniload/bin;wrapper_v2.pl -o 1 -f tycj_job2.xml -j PM_IO_15_minute_12 -destdb dwYZ -bminute 30 -cycle 15" >/dev/null 2>&1
+0,15,30,45 * * * * csh -c "cd /opt/uniload/bin;wrapper_v2.pl -o 1 -f tycj_job2.xml -j PM_IO_15_minute_8 -destdb dwdb1 -bminute 30 -cycle 15" >/dev/null 2>&1
+0,15,30,45 * * * * csh -c "cd /opt/uniload/bin;wrapper_v2.pl -o 1 -f tycj_job2.xml -j PM_IO_15_minute_5 -destdb dwLYG -bminute 30 -cycle 15" >/dev/null 2>&1
+0,15,30,45 * * * * csh -c "cd /opt/uniload/bin;wrapper_v2.pl -o 1 -f tycj_job2.xml -j PM_IO_15_minute_SZ -destdb dw234 -bminute 30 -cycle 15" >/dev/null 2>&1

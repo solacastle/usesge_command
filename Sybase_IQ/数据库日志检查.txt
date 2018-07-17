@@ -1,0 +1,28 @@
+
+10.40.96.149:检查是否坏表
+sp_iqcheckdb 'check table dw.T_SAT_USER_COUNTER_DN_SZ' 
+
+强制删除表：
+set temporary option FORCE_DROP = 'ON'
+drop table dw.O_SE_P2P_USER_L3_H_sq_0129
+
+sp_iqmpxinfo
+sp_iqlocks
+sp_iqversionuse
+sp_iqstatus
+sp_iqtransaction
+
+ps -ef | grep check查看是否有check进程
+
+日志检查：
+cd /iqdata ; grep error *iqmsg | tail -10000  根据错误寻找坏表
+cd /iqdata ; grep sp_import_jia *iqmsg | tail -10000
+cd /iqdata ; grep sp_import_jia *iqmsg | tail -10000
+
+
+COMPUTE_HIGH_RAILWAY_QUARTER_USER
+o_p2p_ctl_user_mme_d_04
+VOICE_QUALITY_08
+call "sp_o_ctl_allmme_proc_d"('dw.o_p2p_ctl_user_mme_d','dw.o_p2p_ctl_user_mme_h',20170407,1,2,'wx')
+
+

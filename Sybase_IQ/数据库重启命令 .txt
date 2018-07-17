@@ -1,0 +1,48 @@
+dbisql -c "dsn=dw@datacenter" -onerror continue -nogui
+
+先锁定crontab此行,阻止etl进程自动拉起
+#* * * * *       /iqdata/check_iq.sh
+
+停止etl进程（没有用就KILL -9 进程）
+sh /dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/shutdown.sh
+
+(1)在主节点上执行以下存储过程查看数据库状态，如果宕机，则status为excluded，mpx_mode为unknown
+dbisql -c "uid=DBA;pwd=Inspur2016" -host 10.40.108.211 -port 4000 -onerror continue -nogui
+sp_iqmpxinfo
+
+(2)先在数据库主节点执行以下sql，目的是把status从excluded变为included，其中LocalXdr307为宕机数据库的server_name。
+ALTER MULTIPLEX SERVER XdrLocal04_S09 status included;
+
+(3)当status从excluded变为included后，在crt上对应宕机数据库的ip地址上执行以下命令：
+
+停止数据库命令：
+正常停止  stop_iq
+
+ps -ef|grep iqsrv
+杀掉进程
+
+重启命令 host=主节点host  eng=主节点eng (分节点和主节点同步)
+cd /iqdata/
+dbbackup -y -d -c "uid=DBA;pwd=Inspur2017;links=tcpip{host=10.40.109.30;port=4000};eng=LocalXdrG01_master" .
+cd /iqdata/
+rm -f LocalXdr01.log
+dblog -r -t LocalXdr01.log LocalXdr01.db
+./start.sh
+
+检查正常后解锁crontab此行
+* * * * *       /iqdata/check_iq.sh
+
+------------------
+查看数据库运行情况
+ps -ef|grep iqsrv
+
+数据库启停日志
+tail -f /iqdata/check.log
+tail -1000 /iqdata/check.log
+
+----------------------
+开启iq进程
+sh /dataload/Inspur/apps/tools-etl_v5/db2db_mini/bin/startup.sh
+
+解锁crontab此行,开启etl进程自动拉起
+* * * * *       /iqdata/check_iq.sh

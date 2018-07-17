@@ -1,0 +1,19 @@
+查看前台界面的后台日志
+ssh irms@10.40.9.170
+Irms@123                             
+cd /irms/irmsdomains/irmsdomain/ish/
+ll npm*.log
+tail -f npm_2017-04-25.log 
+
+
+
+例：
+用户满意度问题-缺少业务名称
+在界面查询后查看日志，找到表T_SAT_REPAIR_SCORE_APP 
+
+
+SQL--2-2--1--用户问题定界库
+DW_DM_GROUP_APP_TYPE_ZC
+
+
+

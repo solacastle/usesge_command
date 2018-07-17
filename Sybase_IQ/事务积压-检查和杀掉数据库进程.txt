@@ -1,0 +1,29 @@
+检查和杀掉数据库进程
+用DBA或weihu账户登录
+
+dbisql -c "uid=DBA;pwd=Inspur##" -host 10.40.108.63 -port 6000 -onerror continue -nogui
+dbisql -c "uid=DBA;pwd=Inspur2017" -host 10.40.109.32 -port 4000 -onerror continue -nogui
+dbisql -c "uid=DBA;pwd=Inspur2016" -host 10.40.108.236 -port 4000 -onerror continue -nogui
+dbisql -c "uid=DBA;pwd=Inspur2016" -host 10.40.108.215 -port 4000 -onerror continue -nogui
+dbisql -c "uid=DBA;pwd=Inspur2016" -host 10.40.108.116 -port 4000 -onerror continue -nogui
+
+sp_iqstatus
+观察Other Versions指标值是否过大，来判断是否有任务积压
+ (例： 27 = 16717Gb  等号左边：等待事务数   等号右边：快照缓存)  事务数过高影响其他任务，快照缓存高一般不影响其他事务
+只看Other Versions：   select * from sp_iqstatus() where name like ' %Other Versions:%'
+ 
+
+查询数据库事物占用缓存
+sp_iqtransaction
+
+查看数据库是否宕机：
+sp_iqmpxinfo
+
+查询目前的数据库进程  --检查积压SQL语句,要在积压机器上检查
+sp_iqcontext
+
+杀掉一个数据库进程(填写connHandle号)
+dba.sp_killsession '34968'
+
+查询负载高的节点   --检查机器情况，排前面的负载大
+sp_iqversionuse

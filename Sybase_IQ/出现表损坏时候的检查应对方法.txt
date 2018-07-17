@@ -1,0 +1,26 @@
+出现表损坏，可以先把源表重命名，
+再按原表结构把空表建好，把损坏的原表单独隔离出来分析
+如果可以select，基本还能用，就把数据插入回去
+如果不能select基本就损坏了
+alter table DM_SE_IM_APP_L3_H_WX_CUR rename DM_SE_IM_APP_L3_H_WX_CUR_tmp
+
+select * into DM_SE_IM_APP_L3_H_WX_CUR from DM_SE_IM_APP_L3_H_WX_CUR_tmp where 0=1
+
+select count(*) from DM_SE_IM_APP_L3_H_WX_CUR_tmp
+
+insert into DM_SE_IM_APP_L3_H_WX_CUR
+select * from DM_SE_IM_APP_L3_H_WX_CUR_tmp
+
+
+sp_iqcheckdb 'check table stage.L_4G_S1_C_S10S11_XZ_20_1'    表特别大时候谨慎check
+
+
+
+出现表无法drop的时候，打开强制删除开关，再删除
+set temporary option FORCE_DROP = 'ON'
+
+drop table dw.O_SE_P2P_SERVER_IP_APP_Q_tz_cur
+
+
+重新赋权查询权限：一般天表才需要
+grant select on O_SE_P2P_SP_DOMAIN_L3_4G_Q_xz_CUR to q_eastcom

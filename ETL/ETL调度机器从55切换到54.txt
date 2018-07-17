@@ -1,0 +1,31 @@
+停止100.55上的db2db_manager服务
+100.55：
+sh /u03/Inspur/apps/tools-etl_v3.5/db2db_manager/bin/stop.sh
+检查55上的服务已停止
+ps -ef |grep db2db_manager
+
+100.55上的db2db_manager打包
+cd  /u03/Inspur/apps/tools-etl_v3.5/
+tar -cvf db2db_manager20170825.tar db2db_manager
+
+修改系统管理>> 系统监控>>应用云监控里的EtlClientManager@54机器的IP地址从10.40.100.55改为10.40.100.54，其他项未改动
+
+从55把db2db_manager复制到54
+100.54：
+cd /u03/Inspur/apps/tools-etl_v3.5/
+
+sftp tmn@10.40.100.55
+Inspur@)!%
+
+mget /u03/Inspur/apps/tools-etl_v3.5/db2db_manager20170824.tar
+
+tar -xvf db2db_manager20170824.tar
+
+
+启动54上的db2db_manager
+sh /u03/Inspur/apps/tools-etl_v3.5/db2db_manager/bin/startup.sh
+
+观察服务调度情况
+ps -ef |grep db2db_manager
+tail -f /u03/Inspur/apps/tools-etl_v3.5/db2db_manager/logs/db2db.log
+tail -f /u03/Inspur/apps/tools-etl_v3.5/db2db_manager/logs/maintain.log

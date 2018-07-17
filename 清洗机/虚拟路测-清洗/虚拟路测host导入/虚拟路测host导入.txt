@@ -1,0 +1,56 @@
+虚拟路测host导入
+
+1. 查询sql：
+select count(1),host from stage.l_4g_s1_u_http_nj_04 where 
+((url like '%x=%' and url like '%y=%' ) or 
+(url like '%location=%')  or 
+(url like '%loc=%')) and hour_key=10
+group by host
+
+2. 在能力开放>数据字典下载host.csv,替换内容并重新导入文件
+
+3、所有清洗机复制文件host.csv
+查看文件日期判断是否更新了：
+ll /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicdata/host.csv
+
+cd /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicdata/
+sftp tmn@10.40.100.51
+Inspur@)!%
+mget /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicdata/host.csv
+
+cp /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicdata/host.csv /u03/Inspur/apps/tools-etl_v3.5/dbservice_1/conf/common/dicConf/dicdata/
+
+4. 重启所有清洗机（清空ipcs并重新加载）
+
+5.在清洗机验证：
+grep "|gspe19-cn.ls.apple.com|" /xdr_result_data/LTE_NEW/HTTP/HTTP_LL/*20170808*
+grep "|gspe19-cn.ls.apple.com|" /xdr_result_data/LTE_NEW/HTTP/HTTP_LL_RES/*20170808*
+grep "|gspe19-cn.ls.apple.com|" /xdr_result_data/LTE_NEW/HTTP/HTTP_LL_RES/*lteu1_http_zc*_20170808*
+-------------
+10.40.100.51/172.16.53.201     clean01   --ok
+10.40.100.52/172.16.53.202     clean02   --ok
+10.40.100.53/172.16.53.203     clean03   --ok
+10.40.100.54/172.16.53.204     clean04   --不执行清洗任务 （调度服务器、库外计算服务器）
+10.40.100.55/172.16.53.205     clean05   --ok  
+10.40.100.56/172.16.53.206     clean06   --ok
+10.40.100.57/172.16.53.207     clean07   --ok
+10.40.100.58/172.16.53.208     clean08   --ok
+10.40.108.134/172.16.33.134    pssig134  --ok
+10.40.96.121/172.16.40.185     clean121  --ok
+10.40.96.122/172.16.40.186     clean122  --ok
+10.40.96.123/172.16.40.187     clean123  --ok
+10.40.96.124/172.16.40.184     clean124  --ok
+10.40.108.135/172.16.33.205    zcacc01   --ok
+10.40.108.136/172.16.33.206    zcacc02   --ok
+10.40.108.137/172.16.33.207    zcacc03   --ok
+10.40.108.138/172.16.33.208    zcacc04    --机器停用
+10.40.108.139/172.16.33.209    xwtec05   --ok
+10.40.108.145/172.16.33.210    xwtec06   --ok
+
+6. 测试：验证有新导入的host则成功
+
+例：验证有gspe19-cn.ls.apple.com网址则成功：
+
+select * from stage.L_4G_S1_U_HTTP_VIRTUAL_07
+where day_key=20170807 and host='gspe19-cn.ls.apple.com'
+

@@ -1,0 +1,18 @@
+SET TEMPORARY OPTION temp_extract_name1='/dataload/User_Cell_CTL_DATE1_SAMPLE.txt';
+SET TEMPORARY OPTION Temp_Extract_Append = 'OFF';
+SET TEMPORARY OPTION Temp_Extract_Binary ='OFF';
+set temporary option temp_extract_null_as_empty = 'ON';
+SET TEMPORARY OPTION temp_extract_swap ='OFF';
+set temporary option temp_extract_column_delimiter = '	';
+select start_time,b.msisdnkey,c.cikey,
+NUMOFATTACH,NUMOFATTACHSUCC,NUMOFATTACHSUCC_RATE,TAU_CNT,TAU_SUC_CNT,
+TAU_SUC_RATE,E_RAB_REQ_CNT,E_RAB_SUCC_CNT,E_RAB_SUCC_RATE,
+SERVICE_REQ_PS_CNT,SERVICE_SUCC_PS_CNT,SERVICE_PS_SUCC_RATE,PAGING_REQ_CNT,
+PAGING_SUCC_CNT,Paging_SUCC_RATE,UE_NET_SUCC_CNT,UE_NET_SUCC_RATE,
+UE_CON_REQ_RATE,UE_CONNECT_ABNORMAL_CNT,ue_connect_abnormal_rate,UE_CONNECT_REQ_CNT,
+UE_CONNECT_SUCC_CNT,ue_connect_succ_rate,DNSREQ,DNSRES,dns_succ_rate,
+sessreq,sessresfail,http_suc_rate
+from O_VIP_USER_cell_HZ_Q_wx_DATE2_SAMPLE a,msisdn_key b,ci_key c
+where a.msisdn=b.msisdn
+and a.cell_eci=c.ci
+and start_time>='DATE3_SAMPLE DATE4_SAMPLE' and start_time<'DATE3_SAMPLE DATE5_SAMPLE'

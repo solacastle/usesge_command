@@ -1,0 +1,50 @@
+date 	 $CustFunc:getTime(yyyyMMdd,-H3,HOUR)$
+day	         $CustFunc:getTime(dd,-H3,HOUR)$
+hour_key	 $CustFunc:getTime(HH,-H3,HOUR)$
+month        $CustFunc:getTime(yyyyMM,-M1,MONTH)$
+starttime	    $CustFunc:getTime(yyyyMMddHH,-H3,HOUR)$	
+day_key 	 $CustFunc:getTime(yyyyMMdd,-D1,DAY)$
+day        $CustFunc:getTime(dd,-D1,DAY)$
+
+
+datetime	$CustFunc:getTime(yyyyMMdd,-M1,MONTH)$
+month	$CustFunc:getTime(yyyyMM,-M1,MONTH)$
+
+
+任务执行时间：
+0 0 * * * ? *   每小时
+0 0 5 * * ? *    每天早上5点
+0 0 5 ? * MON *  每周一每天早上5点
+0 0 7 1 * ? *   每月1号早上7点
+
+
+执行单个存储过程】
+SP_DW_DM_VOLTE_ONE_WAY_SBC_H $datetime$,'$day$',$hour_key$,$starttime$
+
+SP_DW_SE_SPECIAL_USER_NUMS_D $datetime$
+
+SP_DW_SE_SPECIAL_USER_NUMS_D $datetime$,$month$
+
+
+SP_DW_SE_SPECIAL_USER_NUMS_H $datetime$,$day$,$hour_key$,'NJ'
+
+
+执行多个存储过程：
+SP_DW_SE_SPECIAL_USER_NUMS_H $datetime$,$day$,$hour_key$,'WX'
+
+go
+
+SP_DW_SE_SPECIAL_USER_NUMS_H $datetime$,$day$,$hour_key$,'CZ'
+
+go
+
+SP_DW_SE_SPECIAL_USER_NUMS_H $datetime$,$day$,$hour_key$,'ZJ'
+
+go
+
+SP_DW_SE_SPECIAL_USER_NUMS_H $datetime$,$day$,$hour_key$,'SQ'
+
+
+迁移地市到DDN库
+10.40.96.145：
+sh /dataload/output/export_data_215.sh "DW_SE_SPECIAL_USER_NUMS_H_NJ" " and DAY_KEY=$datetime$  and HOUR_KEY=$hour_key$";

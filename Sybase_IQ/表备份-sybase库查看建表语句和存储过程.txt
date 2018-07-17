@@ -1,0 +1,8 @@
+----------查看存储
+
+select source||';' from SYSSOURCE where source like '%dw%' 
+
+
+-----查看表结构
+sp_desc('dw')
+sp_desc('stage')

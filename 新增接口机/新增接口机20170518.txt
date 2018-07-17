@@ -1,0 +1,64 @@
+苏州：
+新增一台csonline：172.16.32.154      控制面
+
+徐州：
+增加一台csonline：172.16.34.138      控制面+用户面V2.0 
+ 
+常州：
+增加一台csonline：172.16.34.118      控制面+用户面V2.0 
+ 
+南通：
+增加一台csonline：172.16.32.171      控制面+用户面V2.0
+
+用户名密码统一为：  langchao/langchao@#$
+
+控制面清洗接口：
+S1MME：
+      接口    100_207_004_001_L_4G_S1_C_S1MME_清洗欺诈
+      任务    01-C1-S1MME清洗-LTE(XDR、实时)
+           	  01-C1-S1MME清洗-LTE(XDR、实时、高铁)_3分支
+S6A:
+      接口    100_207_004_001_L_4G_S1_C_S6A清洗
+      任务    03-C1-S6A清洗-LTE
+S10S11：
+      接口    100_207_004_001_L_4G_S1_C_S10S11清洗
+      任务   04-C1-S10S11清洗-LTE  
+ 	  
+用户面清洗接口：
+VIDEO：
+      接口    100_207_004_001_L_4G_S1_U_ONLINEVIDEO清洗_V2.0
+      任务    05-2-U1-VIDEO清洗-LTE-V2.0
+S1U：
+      接口    100_207_004_001_L_4G_S1_U_S1U清洗_V2.0
+      任务    05-U1-S1U清洗-LTE-V2.0
+HTTP：
+      接口    100_207_004_001_L_4G_S1_U_HTTP清洗欺诈_V2.0
+	  任务    06-U1-HTTP清洗-LTE-V2.0
+DNS：
+      接口    100_207_004_001_L_4G_S1_U_DNS清洗_V2.0
+	  任务    07-U1-DNS清洗-LTE-V2.0
+IM:
+      接口	  100_207_004_001_L_4G_S1_U_IM_清洗_V2.0
+	  任务    13-U1-IM清洗-LTE-V2.0
+
+----流量统计
+
+网管流量：在135数据库执行
+select sum(SGW_UP_FLOW+SGW_DN_FLOW)/1024/1024,REGION_NAME from DW_HW_PM_SGW_H 
+where start_time ='2017-01-27 09:00:00' group by REGION_NAME
+
+
+信令流量—在各个分库执行，
+
+--信令流量  http
+select count(1) as record,sum(dl_traffic+ul_traffic)/1024/1024/1024/1024 as flow,hour_key,day_key 
+from stage.l_4g_s1_u_http_sz_02 where day_key=20170502
+group by hour_key,day_key
+order by hour_key desc
+
+--信令流量  s1u
+select count(1) as record,sum(dl_traffic+ul_traffic)/1024/1024/1024/1024 as flow,hour_key,day_key 
+from stage.l_4g_s1_u_s1u_sz_02
+where day_key=20170502
+group by hour_key,day_key
+order by hour_key desc

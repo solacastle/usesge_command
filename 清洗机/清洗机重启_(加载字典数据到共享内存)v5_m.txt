@@ -1,0 +1,93 @@
+﻿清洗机器重启操作方法：
+V3:   54上调度清洗
+10.40.100.51/172.16.53.201     clean01
+10.40.100.52/172.16.53.202     clean02
+10.40.100.53/172.16.53.203     clean03
+-- 10.40.100.54/172.16.53.204     clean04      --不执行清洗任务 （任务调度机器）
+10.40.100.55/172.16.53.205     clean05
+10.40.100.56/172.16.53.206     clean06
+10.40.100.57/172.16.53.207     clean07
+10.40.100.58/172.16.53.208     clean08
+-- 10.40.108.134/172.16.33.134    pssig134    --不执行清洗任务
+10.40.96.121/172.16.40.185     clean121
+10.40.96.122/172.16.40.186     clean122
+10.40.96.123/172.16.40.187     clean123
+10.40.96.124/172.16.40.184     clean124
+10.40.108.135/172.16.33.205    zcacc01
+10.40.108.136/172.16.33.206    zcacc02
+10.40.108.137/172.16.33.207    zcacc03
+10.40.108.138/172.16.33.208    zcacc04
+10.40.108.139/172.16.33.209    xwtec05   --暂停
+10.40.108.145/172.16.33.210    xwtec06   --暂停
+
+V5:   134上调度清洗  tmn/Inspur@)!%
+                     root/Inspur##
+172.16.40.110      dn110
+172.16.40.111      dn111
+172.16.40.112      dn112
+172.16.40.113      dn113
+172.16.40.114      dn114
+
+
+重启清洗机器(不重新加载共享内存)：
+sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/shutdown.sh
+
+sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/startup.sh
+检查进程   
+clear;ps -ef |grep java
+检查日志   
+tail -f /u03/Inspur/apps/tools-etl_v5/dbservice_1/logs/db2db.log
+
+
+
+加载共享内存并重启机器的方法：
+1、  验证共享内存加载的命令： ipcs 
+2、  停止tools-etl_v5下的dbservice_1
+sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/shutdown.sh
+
+3、  停止tools-etl_v3下的dbservice_1
+sh /u03/Inspur/apps/tools-etl_v3/dbservice_1/bin/stop.sh
+ps -ef|grep java
+
+5、移除共享内存
+ipcs查看缓存
+ipcrm -m shmid 可以用shmid杀掉一个缓存
+ipcrm -s semid 可以用semid杀掉一个缓存
+
+4、  删除 /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicDerby目录
+rm -R /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/dicConf/dicDerby
+
+5、  启动tools-etl_v3下的dbservice_1
+sh /u03/Inspur/apps/tools-etl_v3/dbservice_1/bin/startup.sh
+
+6、  等待三分钟 通过ipcs命令，确认字典数据加载到内存完成，期待结果如下：
+
+-bash-4.1$ ipcs
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x55004690 0          root       644        256064     1                 locked
+0x00001078 32769      tmn        666        6120144    0                       
+0x00001079 65538      tmn        666        204144     0                       
+0x0000107a 98307      tmn        666        1164       0                       
+0x0000107b 131076     tmn        666        104144     0                       
+0x0000107c 163845     tmn        666        10544      0                       
+0x0000107d 196614     tmn        666        9544       0                       
+0x0000107e 229383     tmn        666        518144     0                       
+0x0000107f 262152     tmn        666        52144      0                       
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages     
+
+7、  停止tools-etl_v3下的dbservice_1
+sh /u03/Inspur/apps/tools-etl_v3/dbservice_1/bin/stop.sh
+
+8、  复制tools-etl_v3下的dbservice_1/conf/common/config.ini 到tools-etl_v5对应的目录下
+cp /u03/Inspur/apps/tools-etl_v3/dbservice_1/conf/common/config.ini  /u03/Inspur/apps/tool-etl_v5/dbservice_1/conf/common
+
+9、  启动tools-etl_v5下的dbservice_1
+sh /u03/Inspur/apps/tool-etl_v5/dbservice_1/bin/startup.sh
+

@@ -1,0 +1,430 @@
+<CMDB_CM_META>
+<File id="1">
+	<Measurement id="15041512">
+                <tablename>o_se_user_l3_count</tablename>
+                <source_action total="1">
+                      <source_stat id="1" action="select">
+                      <col id="01">day_key </col>
+                      <col id="02">hour_key</col>
+                      <col id="03">city_key</col>
+                      <col id="04">city_zhname </col>
+                      <col id="05">network_type</col>
+                      <col id="06">app_type_whole_name</col>
+                      <col id="07">app_type_name</col>
+                      <col id="08">user_num</col>
+                      <col id="09">user_flow</col>
+                      <fromwhere>        
+                              from o_se_user_l3_count
+                              where day_key = 20150713 and city_key != 0
+                                </fromwhere>
+			</source_stat>
+			</source_action>
+			<target_action total="1">
+			<target_stat id="1" action="insert">
+			<col id="01">day_key </col>
+			<col id="02">hour_key</col>
+			<col id="03">city_key</col>
+			<col id="04">city_zhname </col>
+			<col id="05">network_type</col>
+			<col id="06">app_type_whole_name</col>
+			<col id="07">app_type_name</col>
+			<col id="08">user_num</col>
+			<col id="09">user_flow</col>                                      
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+			<map id="07"><src>07</src><tgt>07</tgt></map>
+			<map id="08"><src>08</src><tgt>08</tgt></map>
+			<map id="09"><src>09</src><tgt>09</tgt></map>
+                        </target_stat>
+                </target_action>
+</Measurement>
+<Measurement id="15041513">
+                <tablename>o_se_user_l1_count</tablename>
+                <source_action total="1">
+                      <source_stat id="1" action="select">
+                      <col id="01">day_key </col>
+                      <col id="02">hour_key</col>
+                      <col id="03">city_key</col>
+                      <col id="04">city_zhname </col>
+                      <col id="05">network_type</col>
+                      <col id="06">app_type_whole_name</col>
+                      <col id="07">user_num</col>
+                      <col id="08">user_flow</col>
+                      <fromwhere>        
+                              from o_se_user_l1_count
+                              where day_key = 20150713 and city_key != 0
+                                </fromwhere>
+			</source_stat>
+			</source_action>
+			<target_action total="1">
+			<target_stat id="1" action="insert">
+			<col id="01">day_key </col>
+			<col id="02">hour_key</col>
+			<col id="03">city_key</col>
+			<col id="04">city_zhname </col>
+			<col id="05">network_type</col>
+			<col id="06">app_type_whole_name</col>
+			<col id="07">user_num</col>
+			<col id="08">user_flow</col>                                      
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+			<map id="07"><src>07</src><tgt>07</tgt></map>
+			<map id="08"><src>08</src><tgt>08</tgt></map>
+                        </target_stat>
+                </target_action>
+</Measurement>
+<Measurement id="15041514">
+                <tablename>o_se_user_count</tablename>
+                <source_action total="1">
+                      <source_stat id="1" action="select">
+                      <col id="01">day_key </col>
+                      <col id="02">hour_key</col>
+                      <col id="03">city_key</col>
+                      <col id="04">city_zhname </col>
+                      <col id="05">network_type</col>
+                      <col id="06">user_num</col>
+                      <col id="07">user_flow</col>
+                      <fromwhere>        
+                              from o_se_user_count
+                              where day_key = 20150713 and city_key != 0
+                                </fromwhere>
+			</source_stat>
+			</source_action>
+			<target_action total="1">
+			<target_stat id="1" action="insert">
+			<col id="01">day_key </col>
+			<col id="02">hour_key</col>
+			<col id="03">city_key</col>
+			<col id="04">city_zhname </col>
+			<col id="05">network_type</col>
+			<col id="06">user_num</col>
+			<col id="07">user_flow</col>                                      
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+			<map id="07"><src>07</src><tgt>07</tgt></map>
+                        </target_stat>
+                </target_action>
+</Measurement>
+<Measurement id="15041515">
+                <tablename>o_se_tac_type_h</tablename>
+                <source_action total="1">
+                        <source_stat id="1" action="select">
+                        <col id="01">day_key </col>
+                        <col id="02">hour_key</col>
+                        <col id="03">tac_type</col>
+                        <col id="04">tac_cnt </col>
+                        <col id="05">tac_net_rate</col>
+                        <col id="06">tac_traffic</col>
+                        <fromwhere>        
+                                from o_se_tac_type_h
+                                where day_key = 20150713 
+                        </fromwhere>
+			</source_stat>
+		</source_action>
+		<target_action total="1">
+			<target_stat id="1" action="insert">
+                        <col id="01">day_key </col>
+                        <col id="02">hour_key</col>
+                        <col id="03">tac_type</col>
+                        <col id="04">tac_cnt </col>
+                        <col id="05">tac_net_rate</col>
+                        <col id="06">tac_traffic</col>                                    
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+                        </target_stat>
+                </target_action>
+</Measurement>  
+<Measurement id="15113001">
+                <tablename>gis_jingqu_gsm3</tablename>
+                <source_action total="1">
+                        <source_stat id="1" action="select">
+                        <col id="01">substr(AREA_UNIQUE_KEY,instr(AREA_UNIQUE_KEY,'_')+1,2) </col>
+                        <col id="02">AREA_CITY</col>
+                        <col id="03">AREA_NAME</col>
+                        <col id="04">UNIQUE_KEY </col>
+                        <col id="05">CELL_NAME</col>
+                        <col id="06">LTE_COVER</col>
+                        <col id="07">OBJECTID</col>
+                        
+                        <fromwhere>        
+                                from swxtgis.gis_jingqu_gsm_new
+                        </fromwhere>
+			</source_stat>
+		</source_action>
+		<target_action total="1">
+			<target_stat id="1" action="insert">
+                        <col id="01">AREA_UNIQUE_KEY </col>
+                        <col id="02">AREA_CITY</col>
+                        <col id="03">AREA_NAME</col>
+                        <col id="04">UNIQUE_KEY </col>
+                        <col id="05">CELL_NAME</col>
+                        <col id="06">LTE_COVER</col>
+                        <col id="07">OBJECTID</col>                           
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+			<map id="07"><src>07</src><tgt>07</tgt></map>
+                        </target_stat>
+                </target_action>
+</Measurement>  
+<Measurement id="201612080010101">
+                <tablename>VOICE_QUALITY_06</tablename>
+                <source_action total="1">
+                        <source_stat id="1" action="select">
+                        <col id="01">STARTTIME</col>
+                        <col id="02">ENDTIME</col>
+                        <col id="03">MSISDN</col>
+                        <col id="04">IMSI</col>
+                        <col id="05">IMEI</col>
+                        <col id="06">EGCI</col>
+                        <col id="07">LAST_EGCI</col>
+                        <col id="08">CALL_IDENTIFY</col>
+                        <col id="09">INTERFACE</col>
+                        <col id="10">CAllER_RAT_TYPE</col>
+                        <col id="11">CAllED_RAT_TYPE</col>
+                        <col id="12">CALLER_NO</col>
+                        <col id="13">CALLED_NO</col>
+                        <col id="14">CALL_DURATION</col>
+                        <col id="15">POST_DIAL_DELAY</col>
+                        <col id="16">CONN_LATENCY</col>
+                        <col id="17">RTP_Payload_Type</col>
+                        <col id="18">ULCODECRATE</col>
+                        <col id="19">DWCODECRATE</col>
+                        <col id="20">SSRC_CHANGE_TIMES</col>
+                        <col id="21">UL_MOS_AVG</col>
+                        <col id="22">RTCP_UL_DELAY_AVG</col>
+                        <col id="23">RTCP_UL_Jitter_AVG</col>
+                        <col id="24">RTCP_UL_PACKET_NUM</col>
+                        <col id="25">RTCP_UL_LOSSPACKET_NUM</col>
+                        <col id="26">DL_MOS_AVG</col>
+                        <col id="27">RTCP_DL_DELAY_AVG</col>
+                        <col id="28">RTCP_DL_Jitter_AVG</col>
+                        <col id="29">RTCP_DL_PACKET_NUM</col>
+                        <col id="30">RTCP_DL_LOSSPACKET_NUM</col>
+                        <col id="31">UL_MOS_BAD_NUM</col>
+                        <col id="32">RTCP_UL_MEAS_NUM</col>
+                        <col id="33">DL_MOS_BAD_NUM</col>
+                        <col id="34">RTCP_DL_PARA_MEAS_NUM</col>
+                        <col id="35">ONE_WAY_IDENTIFY</col>
+                        <col id="36">UL_ONE_WAY_NUM</col>
+                        <col id="37">DW_ONE_WAY_NUM</col>
+                        <col id="38">UL_IPMOS_AVG</col>
+                        <col id="39">RTP_UL_DELAY_AVG</col>
+                        <col id="40">RTP_UL_JITTER_AVG</col>
+                        <col id="41">RTP_UL_PACKET_NUM</col>
+                        <col id="42">RTP_UL_LOSSPACKET_NUM</col>
+                        <col id="43">DL_IPMOS_AVG</col>
+                        <col id="44">RTP_DL_DELAY_AVG</col>
+                        <col id="45">RTP_DL_JITTER_AVG</col>
+                        <col id="46">RTP_DL_PACKET_NUM</col>
+                        <col id="47">RTP_DL_LOSSPACKET_NUM</col>
+                        <col id="48">UL_IPMOS_BAD_NUM</col>
+                        <col id="49">RTP_UL_PARA_MEAS_NUM</col>
+                        <col id="50">DL_IPMOS_BAD_NUM</col>
+                        <col id="51">RTP_DL_PARA_MEAS_NUM</col>
+                        <col id="52">RTCP_UL_ONE_WAY_NUM</col>
+                        <col id="53">RTCP_DW_ONE_WAY_NUM</col>
+                        <col id="54">FIRST_LTE_RAN_NE_ID</col>
+                        <col id="55">FIRST_LTE_RAN_NE_IP</col>
+                        <col id="56">LAST_LTE_RAN_NE_ID</col>
+                        <col id="57">LAST_LTE_RAN_NE_IP</col>
+                        <col id="58">SGW_ID</col>
+                        <col id="59">SGW_IP</col>
+                        <col id="60">SBC_ID</col>
+                        <col id="61">Layer2ID</col>
+                        <col id="62">HO_OUT_REQ</col>
+                        <col id="63">HO_OUT_SUCC</col>
+                        
+                        <fromwhere>        
+                                from v_VOICE_QUALITY_03_06
+                                where STARTTIME &gt;= ((datediff(ms,'1970-01-01',[start_time])-(8*3600*1000))/1000) and STARTTIME &lt; ((datediff(ms,'1970-01-01',[stop_time])-(8*3600*1000))/1000)
+                        </fromwhere>
+			</source_stat>
+		</source_action>
+		<target_action total="1">
+			<target_stat id="1" action="insert">
+                        <col id="01">STARTTIME</col>
+                        <col id="02">ENDTIME</col>
+                        <col id="03">MSISDN</col>
+                        <col id="04">IMSI</col>
+                        <col id="05">IMEI</col>
+                        <col id="06">EGCI</col>
+                        <col id="07">LAST_EGCI</col>
+                        <col id="08">CALL_IDENTIFY</col>
+                        <col id="09">INTERFACE</col>
+                        <col id="10">CAllER_RAT_TYPE</col>
+                        <col id="11">CAllED_RAT_TYPE</col>
+                        <col id="12">CALLER_NO</col>
+                        <col id="13">CALLED_NO</col>
+                        <col id="14">CALL_DURATION</col>
+                        <col id="15">POST_DIAL_DELAY</col>
+                        <col id="16">CONN_LATENCY</col>
+                        <col id="17">RTP_Payload_Type</col>
+                        <col id="18">ULCODECRATE</col>
+                        <col id="19">DWCODECRATE</col>
+                        <col id="20">SSRC_CHANGE_TIMES</col>
+                        <col id="21">UL_MOS_AVG</col>
+                        <col id="22">RTCP_UL_DELAY_AVG</col>
+                        <col id="23">RTCP_UL_Jitter_AVG</col>
+                        <col id="24">RTCP_UL_PACKET_NUM</col>
+                        <col id="25">RTCP_UL_LOSSPACKET_NUM</col>
+                        <col id="26">DL_MOS_AVG</col>
+                        <col id="27">RTCP_DL_DELAY_AVG</col>
+                        <col id="28">RTCP_DL_Jitter_AVG</col>
+                        <col id="29">RTCP_DL_PACKET_NUM</col>
+                        <col id="30">RTCP_DL_LOSSPACKET_NUM</col>
+                        <col id="31">UL_MOS_BAD_NUM</col>
+                        <col id="32">RTCP_UL_MEAS_NUM</col>
+                        <col id="33">DL_MOS_BAD_NUM</col>
+                        <col id="34">RTCP_DL_PARA_MEAS_NUM</col>
+                        <col id="35">ONE_WAY_IDENTIFY</col>
+                        <col id="36">UL_ONE_WAY_NUM</col>
+                        <col id="37">DW_ONE_WAY_NUM</col>
+                        <col id="38">UL_IPMOS_AVG</col>
+                        <col id="39">RTP_UL_DELAY_AVG</col>
+                        <col id="40">RTP_UL_JITTER_AVG</col>
+                        <col id="41">RTP_UL_PACKET_NUM</col>
+                        <col id="42">RTP_UL_LOSSPACKET_NUM</col>
+                        <col id="43">DL_IPMOS_AVG</col>
+                        <col id="44">RTP_DL_DELAY_AVG</col>
+                        <col id="45">RTP_DL_JITTER_AVG</col>
+                        <col id="46">RTP_DL_PACKET_NUM</col>
+                        <col id="47">RTP_DL_LOSSPACKET_NUM</col>
+                        <col id="48">UL_IPMOS_BAD_NUM</col>
+                        <col id="49">RTP_UL_PARA_MEAS_NUM</col>
+                        <col id="50">DL_IPMOS_BAD_NUM</col>
+                        <col id="51">RTP_DL_PARA_MEAS_NUM</col>
+                        <col id="52">RTCP_UL_ONE_WAY_NUM</col>
+                        <col id="53">RTCP_DW_ONE_WAY_NUM</col>
+                        <col id="54">FIRST_LTE_RAN_NE_ID</col>
+                        <col id="55">FIRST_LTE_RAN_NE_IP</col>
+                        <col id="56">LAST_LTE_RAN_NE_ID</col>
+                        <col id="57">LAST_LTE_RAN_NE_IP</col>
+                        <col id="58">SGW_ID</col>
+                        <col id="59">SGW_IP</col>
+                        <col id="60">SBC_ID</col>
+                        <col id="61">Layer2ID</col>
+                        <col id="62">HO_OUT_REQ</col>
+                        <col id="63">HO_OUT_SUCC</col>                                                  
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>
+			<map id="07"><src>07</src><tgt>07</tgt></map>
+			<map id="08"><src>08</src><tgt>08</tgt></map>
+			<map id="09"><src>09</src><tgt>09</tgt></map>
+			<map id="10"><src>10</src><tgt>10</tgt></map>
+			<map id="11"><src>11</src><tgt>11</tgt></map>
+			<map id="12"><src>12</src><tgt>12</tgt></map>
+			<map id="13"><src>13</src><tgt>13</tgt></map>
+			<map id="14"><src>14</src><tgt>14</tgt></map>
+			<map id="15"><src>15</src><tgt>15</tgt></map>
+			<map id="16"><src>16</src><tgt>16</tgt></map>
+			<map id="17"><src>17</src><tgt>17</tgt></map>
+			<map id="18"><src>18</src><tgt>18</tgt></map>
+			<map id="19"><src>19</src><tgt>19</tgt></map>
+			<map id="20"><src>20</src><tgt>20</tgt></map>
+			<map id="21"><src>21</src><tgt>21</tgt></map>
+			<map id="22"><src>22</src><tgt>22</tgt></map>
+			<map id="23"><src>23</src><tgt>23</tgt></map>
+			<map id="24"><src>24</src><tgt>24</tgt></map>
+			<map id="25"><src>25</src><tgt>25</tgt></map>
+			<map id="26"><src>26</src><tgt>26</tgt></map>
+			<map id="27"><src>27</src><tgt>27</tgt></map>
+			<map id="28"><src>28</src><tgt>28</tgt></map>
+			<map id="29"><src>29</src><tgt>29</tgt></map>
+			<map id="30"><src>30</src><tgt>30</tgt></map>
+			<map id="31"><src>31</src><tgt>31</tgt></map>
+			<map id="32"><src>32</src><tgt>32</tgt></map>
+			<map id="33"><src>33</src><tgt>33</tgt></map>
+			<map id="34"><src>34</src><tgt>34</tgt></map>
+			<map id="35"><src>35</src><tgt>35</tgt></map>
+			<map id="36"><src>36</src><tgt>36</tgt></map>
+			<map id="37"><src>37</src><tgt>37</tgt></map>
+			<map id="38"><src>38</src><tgt>38</tgt></map>
+			<map id="39"><src>39</src><tgt>39</tgt></map>
+			<map id="40"><src>40</src><tgt>40</tgt></map>
+			<map id="41"><src>41</src><tgt>41</tgt></map>
+			<map id="42"><src>42</src><tgt>42</tgt></map>
+			<map id="43"><src>43</src><tgt>43</tgt></map>
+			<map id="44"><src>44</src><tgt>44</tgt></map>
+			<map id="45"><src>45</src><tgt>45</tgt></map>
+			<map id="46"><src>46</src><tgt>46</tgt></map>
+			<map id="47"><src>47</src><tgt>47</tgt></map>
+			<map id="48"><src>48</src><tgt>48</tgt></map>
+			<map id="49"><src>49</src><tgt>49</tgt></map>
+			<map id="50"><src>50</src><tgt>50</tgt></map>
+			<map id="51"><src>51</src><tgt>51</tgt></map>
+			<map id="52"><src>52</src><tgt>52</tgt></map>
+			<map id="53"><src>53</src><tgt>53</tgt></map>
+			<map id="54"><src>54</src><tgt>54</tgt></map>
+			<map id="55"><src>55</src><tgt>55</tgt></map>
+			<map id="56"><src>56</src><tgt>56</tgt></map>
+			<map id="57"><src>57</src><tgt>57</tgt></map>
+			<map id="58"><src>58</src><tgt>58</tgt></map>
+			<map id="59"><src>59</src><tgt>59</tgt></map>
+			<map id="60"><src>60</src><tgt>60</tgt></map>
+			<map id="61"><src>61</src><tgt>61</tgt></map>
+			<map id="62"><src>62</src><tgt>62</tgt></map>
+			<map id="63"><src>63</src><tgt>63</tgt></map>			
+                        </target_stat>
+                </target_action>
+</Measurement>
+
+<Measurement id="20171221001001">
+                <tablename>rms_enodeb_state</tablename>
+                <source_action total="1">
+                        <source_stat id="1" action="select">
+                        <col id="01">DAY_KEY</col>
+                        <col id="02">ENODEB_ID</col>
+						<col id="03">CUTOVER_APPLY_ID</col>
+						<col id="04">CIRCUIT_ID</col>
+						<col id="05">RESULT</col>
+						<col id="06">RESULT2</col>                     
+                        <fromwhere>        
+                                from v_rms_enodeb_state
+                                where DAY_KEY = [start_time]
+                        </fromwhere>
+			</source_stat>
+		</source_action>
+		<target_action total="1">
+			<target_stat id="1" action="insert">
+                        <col id="01">DAY_KEY</col>
+                        <col id="02">ENODEB_ID</col>
+                        <col id="03">CUTOVER_APPLY_ID</col>	
+                        <col id="04">CIRCUIT_ID</col>	
+                        <col id="05">RESULT</col>	
+                        <col id="06">RESULT2</col>							
+			<map id="01"><src>01</src><tgt>01</tgt></map>
+			<map id="02"><src>02</src><tgt>02</tgt></map>
+			<map id="03"><src>03</src><tgt>03</tgt></map>
+			<map id="04"><src>04</src><tgt>04</tgt></map>
+			<map id="05"><src>05</src><tgt>05</tgt></map>
+			<map id="06"><src>06</src><tgt>06</tgt></map>		
+                        </target_stat>
+                </target_action>
+</Measurement>
+   	 
+ </File>
+</CMDB_CM_META>

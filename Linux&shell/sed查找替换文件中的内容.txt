@@ -1,0 +1,10 @@
+直接替换文件中查找到的内容
+sed -i 's/VOICE_QUALITY_03_01/VOICE_QUALITY_03_02/g' txt_voicequality_p_db2db.config.xml   
+
+打印替换后的文件全文本到屏幕
+sed 's/VOICE_QUALITY_03_01/VOICE_QUALITY_03_02/g' txt_voicequality_p_db2db.config.xml   
+
+输出替换后的文件全文本到文件
+sed 's/VOICE_QUALITY_03_01/VOICE_QUALITY_03_02/g' txt_voicequality_p_db2db.config.xml_sample > txt_voicequality_p_db2db.config.xml
+
+

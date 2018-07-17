@@ -1,0 +1,15 @@
+导入
+1.登录数据库：
+dbisql -c "dsn=dw@datacenter" -nogui
+2. 执行命令
+sp_import_jia 'cell_20170721','/dataload/cell_20170721.txt'
+
+
+
+导出
+1.登录数据库：
+dbisql -c "uid=volte_query;pwd=volte2016;eng=dliqdb02_S10;" -host 10.40.109.26 -port 4000 -nogui
+2. 执行命令
+sp_export_jia 'cell_20170721','/srcdata/cell_20170721.txt',' and 1=1'
+
+

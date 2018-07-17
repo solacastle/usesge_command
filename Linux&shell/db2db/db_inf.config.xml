@@ -1,0 +1,2541 @@
+<!--################################################################
+# This is the config file including information about OMC DBs		#
+#################################################################-->
+<DB_INF_CONFIG>
+
+<Datasource id="101">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="102">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="201">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="nwom" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="nwom" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="202">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="zhzy" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="zhzy" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="301">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="jscookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="jscookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="401">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="402">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="403">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="4000">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="404">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="swxt_OI" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="405">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="406">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="20090929">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="alarm2jdcookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="20090930">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="alarm2jdcookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="110">
+        <Management name="pm">
+                <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="3"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="90717">
+        <Management name="fm">
+                <Head Vendor="COMMON" Version="alarm2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="90718">
+        <Management name="fm">
+                <Head Vendor="COMMON" Version="mzone2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="1101">
+        <Management name="pm">
+                <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="1109">
+        <Management name="pm">
+                <Head Vendor="ERICSSON" Version="sgsn" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="103">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="3"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="104">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="3"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+        <Management name="fm">
+                <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="4"/>
+        </Management>
+</Datasource>
+
+<Datasource id="105">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="3"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+        <Management name="fm">
+                <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="4"/>
+        </Management>
+</Datasource>
+<Datasource id="1051">
+        <Management name="pm">
+                <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="106">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="3"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+        <Management name="fm">
+                <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="4"/>
+        </Management>
+</Datasource>
+
+<Datasource id="108">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="3"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+
+<Datasource id="008">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="40" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="fm">
+		<Head Vendor="HUAWEI" Version="40" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="231">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="2312">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="701">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20091014">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="njtd" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8012">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="8013">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="eoms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="9001">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="jscookdb2other" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="1230011">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="tds113" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+         </Management>
+</Datasource>
+
+<Datasource id="232">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+
+<Datasource id="234">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="2341">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="235">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="2351">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="236">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="2361">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="237">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="2371">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="238">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="2381">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="239">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="2391">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="240">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="2401">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<!--Datasource id="241">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="gmsc" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="gmsc" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource-->
+<Datasource id="241">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="2411">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="242">
+        <Management name="pm">
+                <!--Head Vendor="HUAWEI" Version="gmsc" Retrycounts="30" Retryinterval="3"/-->
+		<Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="gmscora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<!--Datasource id="243">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="gmscora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource-->
+<Datasource id="243">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="gmscora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="244">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="245">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="246">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="248">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource> 
+
+<Datasource id="2321">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="501">
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+<Management name="pm">
+		<Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="502">
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+<Management name="pm">
+		<Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="503">
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+<Management name="pm">
+                <Head Vendor="HUAWEI" Version="in2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="601">
+        <Management name="cm">
+                        <Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                 <OmcDB id="1"/>
+                          </Management>
+        <Management name="pm">
+                          <Head Vendor="TEXT" Version="tycj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                    <OmcDB id="2"/>
+            </Management>
+</Datasource>
+
+<Datasource id="603">
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+
+<Datasource id="6021">
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="i2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource> 
+
+<Datasource id="604">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="605">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="606">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="607">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="608">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="609">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="610">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="611">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="612">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="650">
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="amos" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="602">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="gsmsc" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="700">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="750">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="800">
+        <Management name="cm">
+                <Head Vendor="NETSPY" Version="aip" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="20080226">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="20080225">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="mantain" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="80603">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="dh" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="8016">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="inrmdb2cmdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="8014">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="cmdb2inrmdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="888">
+	<Management name="pm">
+		<Head Vendor="ERICSSON" Version="gt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="850">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="851">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="860">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="861">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="862">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="863">
+	<Management name="pm">
+		<Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="864">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="865">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="866">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="867">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="868">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="869">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="3000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="870">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="871">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="1022">
+        <Management name="pm">
+                <Head Vendor="ZHONGXING" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="970">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="090223">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="901">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="fm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="0414">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="mantain" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="9010">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="dh" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="902">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="fm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="903">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="fm">
+		<Head Vendor="HUAWEI" Version="32" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="1016">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="1017">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="1019">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="1020">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="1021">
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="stp" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="8010">
+        <Management name="pm">
+                <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8011">
+        <Management name="cm">
+                <Head Vendor="CMDB" Version="traffic" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="100200">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="cookdb2zhibiao" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100201">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100202">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="unreport" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100203">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100204">
+	<Management name="cm">
+		<Head Vendor="TEXT" Version="cookdb2zhibiao" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100215">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100218">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="100220">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132292">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132294">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132296">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132298">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132300">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132302">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="132305">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+
+<Datasource id="jsnjcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsszcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsszcookdb1">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jswxcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsyzcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsxzcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsntcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jslygcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jszjcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jssqcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsczcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jshacookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jsyccookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="jstzcookdb">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="132400">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="cmdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="cmdb2alarm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="20140818211">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="tycj2wytest" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="1324001">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="alarm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="1324002">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="alarm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="13240022222">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="alarm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+
+<Datasource id="132411">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="halted" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="132401">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="eoms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="132401333">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="eoms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="17220120210">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="eoms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>  
+<Datasource id="132402">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="cmuser" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="132403">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="cmuser" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="2001">
+        <Management name="cm">
+                <Head Vendor="ALCATEL" Version="fillback" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2002">
+        <Management name="cm">
+                <Head Vendor="ERICSSON" Version="fillback" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2003">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="2003" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20030">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="20030" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200300">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="20030" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="20030000">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="zhjk" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="2004">
+   <Management name="cm">
+        <Head Vendor="SIEMENS" Version="2004" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20041">
+   <Management name="cm">
+        <Head Vendor="SIEMENS" Version="2004" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2005">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="spc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2006">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="rpt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2008">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="2008" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2009">
+   <Management name="cm">
+        <Head Vendor="HUAWEI" Version="rptora" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2010">
+   <Management name="pm">
+        <Head Vendor="HUAWEI" Version="smsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2020">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="tool" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2021">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="almmap" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2030">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="nechk" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8001">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80010">
+   <Management name="cm">
+        <Head Vendor="CMUSER" Version="cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8002">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80021">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmblltest" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8003">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="kpi" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8004">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="bur2cm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8005">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="cm2bur" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8006">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="tmndb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8007">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="tmndb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8008">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="tmndb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8009">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8030">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8020">
+   <Management name="pm">
+        <Head Vendor="HUAWEI" Version="smsccall" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8040">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8101">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8102">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>  
+<Datasource id="2111">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="gmsc" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="gmscora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="211">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+
+<Datasource id="6031">
+	<Management name="cm">
+		<Head Vendor="HUAWEI" Version="2000ora" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="1"/>
+	</Management>
+	<Management name="pm">
+		<Head Vendor="HUAWEI" Version="2000" Retrycounts="30" Retryinterval="3"/>
+		<OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="6041">
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="crbt" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="crbtora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="20080520">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>   
+<Datasource id="090706">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="khgz" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="8080">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="lbs" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="2000">
+   <Management name="pm">
+        <Head Vendor="HUAWEI" Version="n2000" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20080629">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20100626">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20080707">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20080710">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8000">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="alc_alm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8008">
+        <Management name="cm">
+                <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8081">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="AlarmAll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20080715">
+        <Management name="cm">
+                <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20081009">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="cookdb2zhibiao" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20081107">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20081107134">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20720081107">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200808201">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="hr" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20081112">
+        <Management name="cm">
+                <Head Vendor="CMDB" Version="wangyou" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+	<Management name="pm">
+                <Head Vendor="TEXT" Version="msc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>	       
+</Datasource>
+<Datasource id="20081119">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80111">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80112">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80113">
+   <Management name="cm">
+           <Head Vendor="COMMON" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+	   <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="801111">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="80617">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="ne" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20081205">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="mantain" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="2008122401">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="cmdb2cookdbchk" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2008122402">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="inrmdb2cookdbchk" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="2008122403">
+   <Management name="cm">
+        <Head Vendor="TEXT" Version="cookdb2cookdbchk" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="090204">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>   
+<Datasource id="9011">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="dh" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="90111">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="dh" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200902241">
+   <Management name="cm">
+        <Head Vendor="ERICSSON" Version="81szinzj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200902242">
+   <Management name="cm">
+        <Head Vendor="ERICSSON" Version="81sz" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200902243">
+   <Management name="cm">
+        <Head Vendor="ERICSSON" Version="81zj" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200902244">
+   <Management name="cm">
+        <Head Vendor="ERICSSON" Version="81wx1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="200902245">
+   <Management name="cm">
+        <Head Vendor="ERICSSON" Version="81wx1inwx2" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20090407">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="db2file" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20090811">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="traffic" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+
+<Datasource id="1324000408">
+        <Management name="cm">
+                <Head Vendor="COMMON" Version="cookdb2tmndb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8051">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="8052">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<!-- add by mxc 20091022 -->
+<Datasource id="8053">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8054">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+	<Management name="cm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="602211">
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+         <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+
+<Datasource id="602242">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+	</Management>
+</Datasource>
+<Datasource id="90710">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="khgzlink" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90711">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="khgzlink" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90712">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="khgzlink" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90713">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="khgzlink" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90714">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="khgzlink" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource> 
+
+<Datasource id="8017">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="alarmbll" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="90512">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="inrmdb2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="901">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="mmsc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8055">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="8056">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="td3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="090514">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="percept" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="090515">
+   <Management name="pm">
+        <Head Vendor="TEXT" Version="pmpercept" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="090615">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="inrmdb2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="200802261">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="13add1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90715">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="alarm135" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="90716">
+        <Management name="cm">
+                <Head Vendor="TEXT" Version="tmndb1135" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="9079">
+   <Management name="cm">
+        <Head Vendor="CMDB" Version="lbs" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20091027">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="erimss" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20100301">
+   <Management name="pm">
+        <Head Vendor="CMDB" Version="zhcm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20110110">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="other2jscookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20110218">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="hr" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="201103111817">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="other2jscookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201104071056">
+        <Management name="pm">
+                <Head Vendor="ERICSSON" Version="alarm" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="11062701">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="authdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="11062702">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="authdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="233">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="230">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="20110820">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="wy" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20110825">
+   <Management name="cm">
+        <Head Vendor="COMMON" Version="cmusernew2wy" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="8882011">
+   <Management name="pm">
+        <Head Vendor="COMMON" Version="cookdb2jswadb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="20111129">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="eoms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource> 
+
+<Datasource id="111231">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="smms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="10122">
+  <Management name="pm"> 
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/> 
+  </Management>
+</Datasource> 
+
+<Datasource id="10222">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+
+<Datasource id="10422">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+
+<Datasource id="10622">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+
+<Datasource id="11022">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="1504">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="gprs50" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+
+<Datasource id="111232">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="np2smms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="201205241517">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="wy2mms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="201208091737">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="jsnpdb2mms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20120920">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="jswadb2jsdcdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/> 
+        </Management>
+</Datasource>
+<Datasource id="20130321">
+        <Management name="pm">
+                <Head Vendor="HUAWEI" Version="smsctrpt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130426">
+        <Management name="fm">
+                <Head Vendor="COMMON" Version="fgys2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130508">
+        <Management name="fm">
+                        <Head Vendor="COMMON" Version="fgys2cookdb" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130519">
+        <Management name="cm">
+                        <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2013051902">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="2016101315">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="20150211">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201305191">
+        <Management name="pm">
+                         <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                         <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201305195">
+        <Management name="pm">
+                           <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                           <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20140518107">
+        <Management name="pm">
+             <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+              <OmcDB id="1"/>
+         </Management>
+</Datasource>
+<Datasource id="2013051903">
+        <Management name="pm">
+                     <Head Vendor="TEXT" Version="jscookdb2swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2013051904">
+        <Management name="pm">
+                     <Head Vendor="TEXT" Version="jscookdb2swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130719">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130724">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="phone" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20130730">
+	<Management name="pm">
+		<Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+		<OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="20130730107">
+        <Management name="pm">
+               <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+               <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="1023">
+        <Management name="pm">
+               <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+               <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="2"/>
+        </Management>
+	<Management name="cm">
+ 	       <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="1052">
+        <Management name="pm">
+               <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="1"/>
+        </Management>
+        <Management name="cm">
+               <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="2"/>
+        </Management>
+	<Management name="cm">
+ 	       <Head Vendor="HUAWEI" Version="m2000" Retrycounts="30" Retryinterval="3"/>
+               <OmcDB id="3"/>
+        </Management>
+</Datasource>
+<Datasource id="131212">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="weizh" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="140109">
+        <Management name="pm">
+              <Head Vendor="TEXT" Version="oracle142" OmcType="" Retrycounts="30" Retryinterval="1"/>
+              <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="14122201">
+        <Management name="pm">
+              <Head Vendor="TEXT" Version="oracle237" OmcType="" Retrycounts="30" Retryinterval="1"/>
+              <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2014061000">
+        <Management name="pm">
+               <Head Vendor="TEXT" Version="neth" OmcType="" Retrycounts="30" Retryinterval="1"/>
+               <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20160119">
+        <Management name="pm">
+                 <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                 <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="2014061001">
+        <Management name="pm">
+                <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201401211554">
+   <Management name="cm">
+           <Head Vendor="CMDB" Version="antenna" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                   <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="201401171632">
+        <Management name="pm">
+        	<Head Vendor="TEXT" Version="newinrmdb2smms" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        	<OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201402250936">
+        <Management name="cm">
+        	<Head Vendor="COMMON" Version="celllac" OmcType="" Retrycounts="30" Retryinterval="1"/>
+        	<OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201403311025">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="505">
+        <Management name="cm">
+                <Head Vendor="HUAWEI" Version="in2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="1"/>
+        </Management>
+<Management name="pm">
+                <Head Vendor="HUAWEI" Version="in2000ora" Retrycounts="30" Retryinterval="3"/>
+                <OmcDB id="2"/>
+        </Management>
+</Datasource>
+<Datasource id="201404221841">
+   <Management name="pm">
+           <Head Vendor="COMMON" Version="inrmdb2dc" OmcType="" Retrycounts="30" Retryinterval="1"/>
+           <OmcDB id="1"/>
+   </Management>
+</Datasource>
+<Datasource id="0020140701">
+   <Management name="cm">
+              <Head Vendor="TEXT" Version="wy2iq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+            <OmcDB id="1"/>
+   </Management>
+ </Datasource>
+<Datasource id="201407251422">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbc1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201407251423">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbc2" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201412032105">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbc3" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20140806101">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="20140806102">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="20140806104">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="20140806105">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="20140806106">
+  <Management name="pm">
+    <Head Vendor="ERICSSON" Version="81" OmcType="" Retrycounts="30" Retryinterval="1"/>
+    <OmcDB id="1"/>
+  </Management>
+</Datasource>
+<Datasource id="0020140807">
+   <Management name="pm">
+       <Head Vendor="TEXT" Version="iq2wy" OmcType="" Retrycounts="30" Retryinterval="1"/>
+       <OmcDB id="1"/>
+   </Management> 
+ </Datasource>
+<Datasource id="2014091817201">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbctemp1" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="201412150253">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="iqbctemp2" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20141012">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20150205">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+<Datasource id="20150315">
+        <Management name="pm">
+                        <Head Vendor="TEXT" Version="synciq" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                        <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="2013051902">
+        <Management name="pm">
+                    <Head Vendor="TEXT" Version="swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                     <OmcDB id="1"/>
+        </Management>
+</Datasource>
+
+<Datasource id="2013051903">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="jscookdb2swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>  
+                  <OmcDB id="1"/>                                                                                 
+        </Management>                                                                                             
+</Datasource> 
+<Datasource id="2013051904">
+        <Management name="pm">
+                   <Head Vendor="TEXT" Version="jscookdb2swxt" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                    <OmcDB id="1"/>
+        </Management>
+</Datasource>  
+<Datasource id="20161208233001">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="voicequality" OmcType="" Retrycounts="30" Retryinterval="1"/>  
+                  <OmcDB id="1"/>                                                                                 
+        </Management>                                                                                             
+</Datasource> 
+<Datasource id="20170401103001">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="voicequality2ddn" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="20171221001">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="trans" OmcType="" Retrycounts="30" Retryinterval="1"/>  
+                  <OmcDB id="1"/>                                                                                 
+        </Management>                                                                                             
+</Datasource> 
+<Datasource id="20170425130501">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="ddn2oracle" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+	</Management>
+</Datasource>
+<Datasource id="20170912001">
+        <Management name="pm">
+                  <Head Vendor="TEXT" Version="slice5s" OmcType="" Retrycounts="30" Retryinterval="1"/>
+                  <OmcDB id="1"/>
+        </Management>
+</Datasource> 
+</DB_INF_CONFIG>

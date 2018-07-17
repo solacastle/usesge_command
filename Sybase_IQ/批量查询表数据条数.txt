@@ -1,0 +1,23 @@
+select 'XINLIN_DATA_2                                             ' as tab,999999999999999 as cc into #t1 from XINLIN_DATA_2 where 0=1
+
+go
+insert into  #t1 select 't_marea_cell_user_hour_sq         ' as tab,count(*) as cc from t_marea_cell_user_hour_sq         
+
+go
+insert into  #t1 select 'O_SE_P2P_SP_DOMAIN_L3_4G_Q_LYG_HIS' as tab,count(*) as cc from O_SE_P2P_SP_DOMAIN_L3_4G_Q_LYG_HIS
+
+go
+insert into  #t1 select 'O_SE_P2P_SP_DOMAIN_L3_4G_Q_YZ_HIS ' as tab,count(*) as cc from O_SE_P2P_SP_DOMAIN_L3_4G_Q_YZ_HIS 
+
+go
+insert into  #t1 select 'O_SE_P2P_SP_DOMAIN_L3_4G_Q_SQ_HIS ' as tab,count(*) as cc from O_SE_P2P_SP_DOMAIN_L3_4G_Q_SQ_HIS 
+
+go
+insert into  #t1 select 'O_USER_CZ_LTE_SIGNAL_NIGHT_D_WX   ' as tab,count(*) as cc from O_USER_CZ_LTE_SIGNAL_NIGHT_D_WX   
+
+go
+insert into  #t1 select 'DM_VL_USER_SWITCH_STATUS_NT       ' as tab,count(*) as cc from DM_VL_USER_SWITCH_STATUS_NT       
+
+go
+
+select * from #t1
